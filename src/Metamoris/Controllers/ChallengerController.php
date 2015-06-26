@@ -1,15 +1,15 @@
 <?php
 
-namespace Metamoris;
+namespace Metamoris\Controllers;
 
 use Symfony\Component\HttpFoundation\Response;
 use Silex\Application;
 
 class ChallengerController
 {
-    public function homeAction()
+    public function homeAction(Application $app)
     {
-        return new Response("ChallengeController::homeAction");
+        return $app['twig']->render('index.html.twig');
     }
 
     public function helloAction(Application $app, $name)

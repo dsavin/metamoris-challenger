@@ -7,4 +7,4 @@ home:
 
 challenger:
   prefix: /challenger
-  resource: challenger.yml
+  resource: routes/challenger.yml

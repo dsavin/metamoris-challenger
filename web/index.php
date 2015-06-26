@@ -1,10 +1,9 @@
 <?php
-
+// everything relative to the root directory
+chdir(  dirname( dirname(__FILE__))  );
+define('APPLICATION_ENV', 'prod');
 ini_set('display_errors', 0);
 
-require_once __DIR__.'/../vendor/autoload.php';
+$app = require 'app/bootstrap.php';
 
-$app = require __DIR__.'/../src/app.php';
-require __DIR__.'/../config/prod.php';
-require __DIR__.'/../src/controllers.php';
 $app->run();

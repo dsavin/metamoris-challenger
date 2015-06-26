@@ -1,7 +1,8 @@
 <?php
 
-use Symfony\Component\Debug\Debug;
-
+// everything relative to the root directory
+chdir(  dirname( dirname(__FILE__))  );
+define('APPLICATION_ENV', 'dev');
 // This check prevents access to debug front controllers that are deployed by accident to production servers.
 // Feel free to remove this, extend it, or make something more sophisticated.
 if (isset($_SERVER['HTTP_CLIENT_IP'])
@@ -12,11 +13,9 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
-require_once __DIR__.'/../vendor/autoload.php';
 
-Debug::enable();
+ini_set('display_errors', 0);
 
-$app = require __DIR__.'/../src/app.php';
-require __DIR__.'/../config/dev.php';
-require __DIR__.'/../src/controllers.php';
+$app = require 'app/bootstrap.php';
+
 $app->run();

@@ -1,0 +1,4 @@
+challenger.home:
+  path:     /
+  defaults:
+    _controller: 'Metamoris\Controllers\ChallengerController::homeAction'
