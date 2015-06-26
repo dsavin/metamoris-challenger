@@ -3,7 +3,9 @@
     <head>
         <title>{% block title '' %} - Challenger - Metamoris</title>
 
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+        {% stylesheets 'css/form.css' filter='cssmin' %}
+        <link href="{{ app.conf.assets_url }}{{ asset_url }}" type="text/css" rel="stylesheet" />
+        {% endstylesheets %}
 
         <script type="text/javascript">
             var _gaq = _gaq || [];

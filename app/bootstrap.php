@@ -14,6 +14,7 @@ use Symfony\Component\Debug\Debug;
 
 $app = new Application();
 
+
 # Providers
 $app->register(new Provider\RoutingServiceProvider());
 $app->register(new Provider\ValidatorServiceProvider());
@@ -34,7 +35,7 @@ if (APPLICATION_ENV === 'dev') {
 
 }
 
-
+$app['conf'] = $conf;
 
 $app['routes'] = $app->extend('routes', function (RouteCollection $routes, Application $app) {
     $loader     = new YamlFileLoader(new FileLocator(ROOT_DIR . '/app/config'));
@@ -54,5 +55,24 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
 
     return $twig;
 });
+
+
+// Register assetic and set up CSSMin
+$app->register(new SilexAssetic\AsseticServiceProvider(), $conf['assetic']);
+
+$app->extend('assetic.filter_manager', function ($fm, $app) {
+    $fm->set('cssmin', new Assetic\Filter\MinifyCssCompressorFilter());
+    return $fm;
+});
+
+// Do we want to dump all our assets? Only if in debug mode!
+if ($app['assetic.options']['auto_dump_assets']) {
+    $dumper = $app['assetic.dumper'];
+    if (isset($app['twig'])) {
+        $dumper->addTwigAssets();
+    }
+    $dumper->dumpAssets();
+}
+
 
 return $app;

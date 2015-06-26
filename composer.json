@@ -21,7 +21,10 @@
         "symfony/translation": "~2.6",
         "symfony/twig-bridge": "~2.6",
         "symfony/validator": "~2.6",
-        "symfony/yaml":"v2.7.0"
+        "symfony/yaml":"v2.7.0",
+        "mheap/silex-assetic": "*",
+        "mrclay/minify": "*",
+        "tubalmartin/cssmin": "*"
 
     },
     "autoload": {

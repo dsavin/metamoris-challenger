@@ -1,5 +1,5 @@
 <?php
-
+ini_set('max_execution_time', 300);
 // everything relative to the root directory
 chdir(  dirname( dirname(__FILE__))  );
 define('APPLICATION_ENV', 'dev');
