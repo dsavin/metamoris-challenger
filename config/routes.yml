@@ -1,0 +1,10 @@
+home:
+  path: /
+  defaults:
+    _controller: 'Silex\Application::redirect'
+    url: /challenger
+    permanent: true
+
+challenger:
+  prefix: /challenger
+  resource: challenger.yml
