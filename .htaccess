@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteBase /challenger
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ web/index.php [L]
