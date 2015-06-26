@@ -1,0 +1,1188 @@
+/*  ==================
+    1. FONTS
+    ==================  */
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@charset "UTF-8";
+@font-face {
+	font-family: 'entypo';
+	font-style: normal;
+	font-weight: normal;
+	src: url('/icons/entypo/entypo.eot');
+	src: url('icons/entypo/entypo.eot?#iefix') format('eot'), 
+	url('icons/entypo/entypo.woff') format('woff'), 
+	url('icons/entypo/entypo.ttf') format('truetype'), 
+	url('icons/entypo/entypo.svg#entypo') format('svg');
+}
+.entypo-note:before{content:"\266a"}.entypo-note-beamed:before{content:"\266b"}.entypo-music:before{content:"\1f3b5"}.entypo-search:before{content:"\1f50d"}.entypo-flashlight:before{content:"\1f526"}.entypo-mail:before{content:"\2709"}.entypo-heart:before{content:"\2665"}.entypo-heart-empty:before{content:"\2661"}.entypo-star:before{content:"\2605"}.entypo-star-empty:before{content:"\2606"}.entypo-user:before{content:"\1f464"}.entypo-users:before{content:"\1f465"}.entypo-user-add:before{content:"\e700"}.entypo-video:before{content:"\1f3ac"}.entypo-picture:before{content:"\1f304"}.entypo-camera:before{content:"\1f4f7"}.entypo-layout:before{content:"\268f"}.entypo-menu:before{content:"\2630"}.entypo-check:before{content:"\2713"}.entypo-cancel:before{content:"\2715"}.entypo-cancel-circled:before{content:"\2716"}.entypo-cancel-squared:before{content:"\274e"}.entypo-plus:before{content:"\2b"}.entypo-plus-circled:before{content:"\2795"}.entypo-plus-squared:before{content:"\229e"}.entypo-minus:before{content:"\2d"}.entypo-minus-circled:before{content:"\2796"}.entypo-minus-squared:before{content:"\229f"}.entypo-help:before{content:"\2753"}.entypo-help-circled:before{content:"\e704"}.entypo-info:before{content:"\2139"}.entypo-info-circled:before{content:"\e705"}.entypo-back:before{content:"\1f519"}.entypo-home:before{content:"\2302"}.entypo-link:before{content:"\1f517"}.entypo-attach:before{content:"\1f4ce"}.entypo-lock:before{content:"\1f512"}.entypo-lock-open:before{content:"\1f513"}.entypo-eye:before{content:"\e70a"}.entypo-tag:before{content:"\e70c"}.entypo-bookmark:before{content:"\1f516"}.entypo-bookmarks:before{content:"\1f4d1"}.entypo-flag:before{content:"\2691"}.entypo-thumbs-up:before{content:"\1f44d"}.entypo-thumbs-down:before{content:"\1f44e"}.entypo-download:before{content:"\1f4e5"}.entypo-upload:before{content:"\1f4e4"}.entypo-upload-cloud:before{content:"\e711"}.entypo-reply:before{content:"\e712"}.entypo-reply-all:before{content:"\e713"}.entypo-forward:before{content:"\27a6"}.entypo-quote:before{content:"\275e"}.entypo-code:before{content:"\e714"}.entypo-export:before{content:"\e715"}.entypo-pencil:before{content:"\270e"}.entypo-feather:before{content:"\2712"}.entypo-print:before{content:"\e716"}.entypo-retweet:before{content:"\e717"}.entypo-keyboard:before{content:"\2328"}.entypo-comment:before{content:"\e718"}.entypo-chat:before{content:"\e720"}.entypo-bell:before{content:"\1f514"}.entypo-attention:before{content:"\26a0"}.entypo-alert:before{content:"\1f4a5'"}.entypo-vcard:before{content:"\e722"}.entypo-address:before{content:"\e723"}.entypo-location:before{content:"\e724"}.entypo-map:before{content:"\e727"}.entypo-direction:before{content:"\27a2"}.entypo-compass:before{content:"\e728"}.entypo-cup:before{content:"\2615"}.entypo-trash:before{content:"\e729"}.entypo-doc:before{content:"\e730"}.entypo-docs:before{content:"\e736"}.entypo-doc-landscape:before{content:"\e737"}.entypo-doc-text:before{content:"\1f4c4"}.entypo-doc-text-inv:before{content:"\e731"}.entypo-newspaper:before{content:"\1f4f0"}.entypo-book-open:before{content:"\1f4d6"}.entypo-book:before{content:"\1f4d5"}.entypo-folder:before{content:"\1f4c1"}.entypo-archive:before{content:"\e738"}.entypo-box:before{content:"\1f4e6"}.entypo-rss:before{content:"\e73a"}.entypo-phone:before{content:"\1f4dE"}.entypo-cog:before{content:"\2699"}.entypo-tools:before{content:"\2692"}.entypo-share:before{content:"\e73c"}.entypo-shareable:before{content:"\e73e"}.entypo-basket:before{content:"\e73d"}.entypo-bag:before{content:"\1f45c'"}.entypo-calendar:before{content:"\1f4c5"}.entypo-login:before{content:"\e740"}.entypo-logout:before{content:"\e741"}.entypo-mic:before{content:"\1f3a4"}.entypo-mute:before{content:"\1f507"}.entypo-sound:before{content:"\1f50a"}.entypo-volume:before{content:"\e742"}.entypo-clock:before{content:"\1f554"}.entypo-hourglass:before{content:"\23f3"}.entypo-lamp:before{content:"\1f4a1"}.entypo-light-down:before{content:"\1f505"}.entypo-light-up:before{content:"\1f506"}.entypo-adjust:before{content:"\25d1"}.entypo-block:before{content:"\1f6ab"}.entypo-resize-full:before{content:"\e744"}.entypo-resize-small:before{content:"\e746"}.entypo-popup:before{content:"\e74c"}.entypo-publish:before{content:"\e74d"}.entypo-window:before{content:"\e74e"}.entypo-arrow-combo:before{content:"\e74f"}.entypo-down-circled:before{content:"\e758"}.entypo-left-circled:before{content:"\e759"}.entypo-right-circled:before{content:"\e75a"}.entypo-up-circled:before{content:"\e75b"}.entypo-down-open:before{content:"\e75c"}.entypo-left-open:before{content:"\e75d"}.entypo-right-open:before{content:"\e75e"}.entypo-up-open:before{content:"\e75f"}.entypo-down-open-mini:before{content:"\e760"}.entypo-left-open-mini:before{content:"\e761"}.entypo-right-open-mini:before{content:"\e762"}.entypo-up-open-mini:before{content:"\e763"}.entypo-down-open-big:before{content:"\e764"}.entypo-left-open-big:before{content:"\e765"}.entypo-right-open-big:before{content:"\e766"}.entypo-up-open-big:before{content:"\e767"}.entypo-down:before{content:"\2b07"}.entypo-left:before{content:"\2b05"}.entypo-right:before{content:"\27a1"}.entypo-up:before{content:"\2b06"}.entypo-down-dir:before{content:"\25be"}.entypo-left-dir:before{content:"\25c2"}.entypo-right-dir:before{content:"\25b8"}.entypo-up-dir:before{content:"\25b4"}.entypo-down-bold:before{content:"\e4b0"}.entypo-left-bold:before{content:"\e4ad"}.entypo-right-bold:before{content:"\e4ae"}.entypo-up-bold:before{content:"\e4af"}.entypo-down-thin:before{content:"\2193"}.entypo-left-thin:before{content:"\2190"}.entypo-right-thin:before{content:"\2192"}.entypo-up-thin:before{content:"\2191"}.entypo-ccw:before{content:"\27f2"}.entypo-cw:before{content:"\27f3"}.entypo-arrows-ccw:before{content:"\1f504"}.entypo-level-down:before{content:"\21b3"}.entypo-level-up:before{content:"\21b0"}.entypo-shuffle:before{content:"\1f500"}.entypo-loop:before{content:"\1f501"}.entypo-switch:before{content:"\21c6"}.entypo-play:before{content:"\25b6"}.entypo-stop:before{content:"\25a0"}.entypo-pause:before{content:"\2389"}.entypo-record:before{content:"\26ab"}.entypo-to-end:before{content:"\23ed"}.entypo-to-start:before{content:"\23ee"}.entypo-fast-forward:before{content:"\23e9"}.entypo-fast-backward:before{content:"\23ea"}.entypo-progress-0:before{content:"\e768"}.entypo-progress-1:before{content:"\e769"}.entypo-progress-2:before{content:"\e76a"}.entypo-progress-3:before{content:"\e76b"}.entypo-target:before{content:"\1f3af"}.entypo-palette:before{content:"\1f3a8"}.entypo-list:before{content:"\e005"}.entypo-list-add:before{content:"\e003"}.entypo-signal:before{content:"\1f4f6"}.entypo-trophy:before{content:"\1f3c6"}.entypo-battery:before{content:"\1f50b"}.entypo-back-in-time:before{content:"\e771"}.entypo-monitor:before{content:"\1f4bb"}.entypo-mobile:before{content:"\1f4f1"}.entypo-network:before{content:"\e776"}.entypo-cd:before{content:"\1f4bf"}.entypo-inbox:before{content:"\e777"}.entypo-install:before{content:"\e778"}.entypo-globe:before{content:"\1f30e"}.entypo-cloud:before{content:"\2601"}.entypo-cloud-thunder:before{content:"\26c8"}.entypo-flash:before{content:"\26a1"}.entypo-moon:before{content:"\263d"}.entypo-flight:before{content:"\2708"}.entypo-paper-plane:before{content:"\e79b"}.entypo-leaf:before{content:"\1f342"}.entypo-lifebuoy:before{content:"\e788"}.entypo-mouse:before{content:"\e789"}.entypo-briefcase:before{content:"\1f4bc"}.entypo-suitcase:before{content:"\e78e"}.entypo-dot:before{content:"\e78b"}.entypo-dot-2:before{content:"\e78c"}.entypo-dot-3:before{content:"\e78d"}.entypo-brush:before{content:"\e79a"}.entypo-magnet:before{content:"\e7a1"}.entypo-infinity:before{content:"\221e"}.entypo-erase:before{content:"\232b"}.entypo-chart-pie:before{content:"\e751"}.entypo-chart-line:before{content:"\1f4c8"}.entypo-chart-bar:before{content:"\1f4ca"}.entypo-chart-area:before{content:"\1f53e"}.entypo-tape:before{content:"\2707"}.entypo-graduation-cap:before{content:"\1f393"}.entypo-language:before{content:"\e752"}.entypo-ticket:before{content:"\1f3ab"}.entypo-water:before{content:"\1f4a6"}.entypo-droplet:before{content:"\1f4a7"}.entypo-air:before{content:"\e753"}.entypo-credit-card:before{content:"\1f4b3"}.entypo-floppy:before{content:"\1f4be"}.entypo-clipboard:before{content:"\1f4cb"}.entypo-megaphone:before{content:"\1f4e3"}.entypo-database:before{content:"\e754"}.entypo-drive:before{content:"\e755"}.entypo-bucket:before{content:"\e756"}.entypo-thermometer:before{content:"\e757"}.entypo-key:before{content:"\1f511"}.entypo-flow-cascade:before{content:"\e790"}.entypo-flow-branch:before{content:"\e791"}.entypo-flow-tree:before{content:"\e792"}.entypo-flow-line:before{content:"\e793"}.entypo-flow-parallel:before{content:"\e794"}.entypo-rocket:before{content:"\1f680"}.entypo-gauge:before{content:"\e7a2"}.entypo-traffic-cone:before{content:"\e7a3"}.entypo-cc:before{content:"\e7a5"}.entypo-cc-by:before{content:"\e7a6"}.entypo-cc-nc:before{content:"\e7a7"}.entypo-cc-nc-eu:before{content:"\e7a8"}.entypo-cc-nc-jp:before{content:"\e7a9"}.entypo-cc-sa:before{content:"\e7aa"}.entypo-cc-nd:before{content:"\e7ab"}.entypo-cc-pd:before{content:"\e7ac"}.entypo-cc-zero:before{content:"\e7ad"}.entypo-cc-share:before{content:"\e7ae"}.entypo-cc-remix:before{content:"\e7af"}.entypo-github:before{content:"\f300"}.entypo-github-circled:before{content:"\f301"}.entypo-flickr:before{content:"\f303"}.entypo-flickr-circled:before{content:"\f304"}.entypo-vimeo:before{content:"\f306"}.entypo-vimeo-circled:before{content:"\f307"}.entypo-twitter:before{content:"\f309"}.entypo-twitter-circled:before{content:"\f30a"}.entypo-facebook:before{content:"\f30c"}.entypo-facebook-circled:before{content:"\f30d"}.entypo-facebook-squared:before{content:"\f30e"}.entypo-gplus:before{content:"\f30f"}.entypo-gplus-circled:before{content:"\f310"}.entypo-pinterest:before{content:"\f312"}.entypo-pinterest-circled:before{content:"\f313"}.entypo-tumblr:before{content:"\f315"}.entypo-tumblr-circled:before{content:"\f316"}.entypo-linkedin:before{content:"\f318"}.entypo-linkedin-circled:before{content:"\f319"}.entypo-dribbble:before{content:"\f31b"}.entypo-dribbble-circled:before{content:"\f31c"}.entypo-stumbleupon:before{content:"\f31e"}.entypo-stumbleupon-circled:before{content:"\f31f"}.entypo-lastfm:before{content:"\f321"}.entypo-lastfm-circled:before{content:"\f322"}.entypo-rdio:before{content:"\f324"}.entypo-rdio-circled:before{content:"\f325"}.entypo-spotify:before{content:"\f327"}.entypo-spotify-circled:before{content:"\f328"}.entypo-qq:before{content:"\f32a"}.entypo-instagrem:before{content:"\f32d"}.entypo-dropbox:before{content:"\f330"}.entypo-evernote:before{content:"\f333"}.entypo-flattr:before{content:"\f336"}.entypo-skype:before{content:"\f339"}.entypo-skype-circled:before{content:"\f33a"}.entypo-renren:before{content:"\f33c"}.entypo-sina-weibo:before{content:"\f33f"}.entypo-paypal:before{content:"\f342"}.entypo-picasa:before{content:"\f345"}.entypo-soundcloud:before{content:"\f348"}.entypo-mixi:before{content:"\f34b"}.entypo-behance:before{content:"\f34e"}.entypo-google-circles:before{content:"\f351"}.entypo-vkontakte:before{content:"\f354"}.entypo-smashing:before{content:"\f357"}.entypo-sweden:before{content:"\f601"}.entypo-db-shape:before{content:"\f600"}.entypo-logo-db:before{content:"\f603"}
+
+[class*="entypo-"]:before {
+	font-family: 'entypo', sans-serif;
+}
+.row span.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background: #ddd;
+  font-size: 16px;
+  line-height: 36px;
+  text-align: center;
+  width: 38px;
+}
+span.icon {
+  margin-top: 28px;
+  margin-left: 1px;
+}
+.row label {
+  
+}
+input:hover ~ span.icon, input:focus ~ span.icon {
+  outline: none;
+  background: #F00B0B;
+}
+ a, label, input, .terms-window, span.slick-tip, input ~ span.icon {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/*  ==================
+    1. FONTS
+    ==================  */
+
+span.rightcontfont h1 {
+  padding: 20px;
+}
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@font-face {
+	font-family: 'calibriregular';
+	src: url('../fonts/calibri-webfont.eot');
+	src: url('../fonts/calibri-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/calibri-webfont.woff') format('woff'),
+	url('../fonts/calibri-webfont.ttf') format('truetype'),
+	url('../fonts/calibri-webfont.svg#calibriregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* #Media Queries
+================================================== */
+
+/*	Retina Ready Display  */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+    .form-icon {
+		background: url(../images/sprite2X.png) no-repeat 0 0;
+		background-size: 36px 300px;
+    }
+	
+	.head-icon {
+		background: url(../images/header-sprite2x.png) no-repeat 0 0;
+		background-size: 30px 800px;
+	}
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    
+    .form-container { width: 100%; }
+	
+	#metamoris_form dt { width: 24%; }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	
+	.form-container { width: 100%; }
+	
+		.form-container #metamoris_form .stage:before,
+        .form-container #metamoris_form .stage:after { display: none; }
+        
+        #metamoris_form .stage-content { width: 100%; }
+		
+		#metamoris_form .stage {
+			text-align: left;
+			margin-bottom: 10px;
+		}
+		
+			#metamoris_form .stage-header {float: left;}
+
+				#metamoris_form .stage-title {	padding-left: 59px;	}
+
+				#metamoris_form .stage-info { padding-left: 60px; }
+         
+		#metamoris_form .stage.tmm-success .stage-header:after {
+            top: -4px;
+			left: 209px;
+		}
+                
+                #metamoris_form .stage.tmm-success .stage-header.head-number:after { top: -13px; }
+		
+		#metamoris_form .stage { min-height: 0; }
+		
+		#metamoris_form dt { width: 16%; }
+		#metamoris_form .tooltip { display: none; }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    
+	.form-container { width: 100%; }
+    
+    #metamoris_form .form-header { font: 19px 'calibriregular',sans-serif;	}
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 480px) {
+	
+	#metamoris_form .next .button.button-control span { padding: 6px 26px 9px 2px; }
+
+    #metamoris_form .prev .button.button-control span {
+		padding-left: 45px;
+		padding: 6px 2px 9px 26px;
+    }
+    
+    #metamoris_form .next .button.button-control span:after { right: 5px; }
+
+    #metamoris_form .prev .button.button-control span:after { left: 3px; }
+    
+    #metamoris_form .next .button-divider { right: 25px; }
+	
+	#metamoris_form .prev .button-divider {	left: 25px; }
+
+    #metamoris_form .tooltip { display: none; }
+	
+    #metamoris_form dt { width: 31%; }
+	#metamoris_form .form-login { width: 100%; margin-left: -240px; }
+}
+
+@media screen and (max-width: 320px) {
+	#metamoris_form .form-login { 
+		width: 100%;
+		margin-left: -160px; 
+	}
+	
+    .form-container { width: 100%; }
+}
+
+/* -------------------------------------------------- */
+/*	Styles
+/* -------------------------------------------------- */
+	/* ---------------------------------------------------------------------- */
+	/*	Reset
+	/* ---------------------------------------------------------------------- */
+
+	html, body, div, span, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	abbr, address, cite, code,
+	del, dfn, em, img, ins, kbd, q, samp,
+	small, strong, sub, sup, var,
+	b, i,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+		font-size: 100%;
+		vertical-align: baseline;
+		background: transparent;
+
+		/*  fix for mac os  */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	article,aside,details,figcaption,figure,
+	footer,header,hgroup,menu,nav,section { display: block; }
+
+	*,
+	 #metamoris_form *:after,
+	 #metamoris_form *:before {
+		margin: 0;
+		padding: 0;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+	}
+
+	#metamoris_form a {
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+		outline: none;
+		text-decoration: none;
+		background: transparent;
+		vertical-align: baseline;
+	}
+
+	#metamoris_form a, #metamoris_form a > * {
+		text-decoration: none;
+		color: #5a5a5a;
+	}
+
+	#metamoris_form a:hover {
+		color: #fff;
+	}
+
+	.not-ie #metamoris_form a {
+		-webkit-transition: color .35s ease-out;
+				transition: color .35s ease-out;
+	}
+
+	/* ---------------------------------------------------------------------- */
+	/*	Basic Elements
+	/* ---------------------------------------------------------------------- */
+	/*#metamoris_form * { line-height: 1.65em; }*/
+
+	body {
+		background-color:  #000000; 
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: #969696;
+		font-weight: 300;
+		font-size: 16px;
+		font-family: 'Roboto', sans-serif;
+		line-height: 1.65em;
+		height: 100%;
+
+		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+		-webkit-text-size-adjust: 100%;
+
+		/*  fix for mac os  */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	html {
+		height: 100%;
+	}
+
+		/* -------------------------------------------------- */
+		/*	Typography
+		/* -------------------------------------------------- */
+
+		#metamoris_form p {
+			margin: 0;
+			padding: 0;
+			line-height: 1.65em;
+			font-weight: 400;
+		}
+		  input.ccbtn {
+		  position: relative;
+		  top: -6px;
+		}
+		  input.ccbtn2 {
+		  position: relative;
+		  top: -6px;
+		}
+		#TotalCost {
+			margin-top: 25px;
+			border-top: 1px dotted #a2a2a2;
+			padding-top: 7px;
+			float: right;
+			margin-right: 30px;
+		}
+		.TotalCostTotal
+					{
+					  font-style: inherit;
+					  font-size: 22px;
+					  color: rgb(249, 0, 0);
+					}
+
+		#metamoris_form h1 { font-size: 36px; }
+		#metamoris_form h2 {   
+			  					padding-bottom: 3px;
+								font-weight: normal;
+  								font-size: 24px;
+  								font-family: oswald;
+  								 }
+
+		::-moz-selection {
+			background-color: rgba(130, 210, 239, 0.99);
+			color: #000;
+			text-shadow: none;
+		}
+
+		::-webkit-selection {
+			background-color: rgba(130, 210, 239, 0.99);
+			color: #000;
+			text-shadow: none;
+		}
+
+		::selection {
+			background-color: rgba(130, 210, 239, 0.99);
+			color: #000;
+			text-shadow: none;
+		}
+.head_logo_left  {
+  	 	    float: left;
+  			margin-top: 15px;
+  			padding-right: 5px;
+  }
+  .head_logo_left img	{
+  			max-width: 33px;
+			max-height:27px;
+		}
+  .head_logo_right img	{
+		  			max-width: 33px;
+					max-height:27px;
+				}
+     .stepslogo img	{
+   		  			max-width: 33px;
+   					max-height:27px;
+   				}	
+   	  .steps img {
+   	  	width:22px;
+   	  	height:28px;
+   	  }			
+  .head_logo_right  {
+  	 	    float: right;
+  			margin-top: 15px;
+  			padding-right: 5px;
+  }
+		/* -------------------------------------------------- */
+		/*	Forms
+		/* -------------------------------------------------- */
+
+		#metamoris_form button,
+		#metamoris_form input[type="button"],
+		#metamoris_form input[type="reset"],
+		#metamoris_form input[type="submit"] {
+			cursor: pointer;
+			-webkit-appearance: button;
+		}
+
+		#metamoris_form button::-moz-focus-inner,
+		#metamoris_form input::-moz-focus-inner {
+			padding: 0;
+			border: 0;
+		}
+
+		#metamoris_form button,
+		#metamoris_form input,
+		#metamoris_form select,
+		#metamoris_form textarea {
+			margin: 0;
+			border: none;
+			vertical-align: baseline;
+			font-size: 100%;
+		}
+
+		#metamoris_form button {
+			display: inline-block;
+			margin-bottom: 0;
+			outline: none;
+			background-color: transparent;
+			color: #fff;
+			vertical-align: baseline;
+			text-align: center;
+			text-decoration: none;
+			font: 11px/1.5 Arial;
+			cursor: pointer;
+		}
+
+		#metamoris_form label { 
+			display: inline-block; 
+			cursor: pointer;
+		}
+
+		#metamoris_form input,
+		#metamoris_form textarea,
+		#metamoris_form select,
+		#metamoris_form button {
+		-webkit-transition: all .35s ease-out;
+				transition: all .35s ease-out;
+		}
+
+		#metamoris_form input[type="text"],
+		#metamoris_form input[type="password"] {
+			padding: 12px 20px 10px 45px;
+			display: inline-block;
+			width: 100%;
+			background-color: #fff;
+			color: #999;
+			font-size: 12px;
+			font-style: normal;
+			-webkit-appearance: none;
+		}
+
+		#metamoris_form input[type="text"]:focus,
+		#metamoris_form input[type="password"]:focus{ 
+			outline: 0 none;
+
+			-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(3, 127, 215, 0.9);
+					  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(215, 3, 27, 1);
+		}
+
+		#metamoris_form input[type="text"]:hover,
+		#metamoris_form input[type="password"]:hover{ 
+			background-color: #F0F0F0;
+		}
+
+		#metamoris_form input[type="submit"],
+		#metamoris_form input[type="button"] { width: auto; }
+
+		#metamoris_form .wrong-data { border-color: #fe5214; }
+
+		/* Fix for Mobile Safari */
+		#metamoris_form input[type="checkbox"]	{ -webkit-appearance: checkbox; }
+		#metamoris_form input[type="radio"]		{ -webkit-appearance: radio; }
+
+		 Chrome, Safari 
+		#metamoris_form input::-webkit-input-placeholder,
+		#metamoris_form textarea::-webkit-input-placeholder { color: #999; }
+
+		 Firefox 
+		#metamoris_form input:-moz-placeholder,
+		#metamoris_form textarea:-moz-placeholder { color: #999; }
+
+		/* -------------------------------------------------- */
+		/*	Buttons
+		/* -------------------------------------------------- */	
+
+		#metamoris_form .button {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 0;
+  outline: none;
+  color: #fff;
+  vertical-align: baseline;
+  text-decoration: none;
+  text-align: center;
+  background: red;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'oswald', sans-serif;
+  padding: 1px;
+  background-size: auto 100%;
+  background-position: 0 100%;
+  -webkit-transition: background-position .5s ease, background-size .5s ease;
+  transition: background-position .5s ease, background-size .5s ease;
+}
+
+			#metamoris_form .button a { color: #fff;}
+
+		.ie8 #metamoris_form .button { background-color: #00BDFD; }
+		.ie9 #metamoris_form .button { background-color: #00BDFD; }
+
+		#metamoris_form .button:hover {
+			background-size: auto 200%;
+			background-position: 0 0;
+
+			-webkit-transition: background-position .5s ease, background-size .5s ease;
+					transition: background-position .5s ease, background-size .5s ease;
+		}
+
+			#metamoris_form .button:active {
+			  background: -moz-linear-gradient(top, #0381d8 0%, #00bdfd 0%, #00bdfd 85%, #0381d8 100%);
+			  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D80303), color-stop(0%,#FD0000), color-stop(85%,#FD0000), color-stop(100%,#D80303));
+			  background: -webkit-linear-gradient(top, #D80303 0%,#FD0000 0%,#FD0000 85%,#D80303 100%);
+			  background: linear-gradient(to bottom, #D80303 0%,#FD0000 0%,#FD0000 85%,#D80303 100%);
+			}
+
+			#metamoris_form .button, 
+			#metamoris_form .button span {
+			-webkit-border-radius: 4px;
+					border-radius: 4px;
+			}
+
+				#metamoris_form .button span {
+			  border-top: 1px solid #FE6C6C;
+			  border-bottom: 1px solid #DA2929;
+			  border-left: 1px solid #EF2828;
+			  border-right: 1px solid #EF2828;
+			  display: inline-block;
+			  padding: 2px 14px;
+			}
+	/*------------------------------------------------------*/
+	/*	Form
+	/*------------------------------------------------------*/
+
+		#metamoris_form.substrate-transparent {
+			padding: 0px 14px;
+			background-color: transparent;
+		}
+
+		#metamoris_form.form-login {
+			top: 50%; 
+			left: 50%; 
+			width: 390px;
+			height: 290px; 
+			position: absolute; 
+			margin-top: -145px; 
+			margin-left: -195px; 
+		}
+
+		#metamoris_form .form-login-heading {
+			font: 20px 'Myriad Pro',sans-serif;
+			color: #000;
+			margin: 0;
+		}
+
+		#metamoris_form .input-block {
+			padding-bottom: 5px;
+			position: relative;
+		}
+
+			#metamoris_form .input-block label {
+				font-size: 14px;
+				font-family: 'calibriregular', sans-serif;
+				color: #4f4f4f;
+			}
+
+		#metamoris_form .tip {
+			padding-top: 2px;
+			padding-bottom: 26px;
+			margin: 0px -14px;
+		}
+
+			#metamoris_form .tip a {
+				color: #FF0000;
+				font: 12px  'calibriregular', sans-serif;
+				padding: 0px 14px;
+				float: right;
+			}
+
+			#metamoris_form .tip a:hover { color: #000; }
+
+		#metamoris_form .button-group {
+			position: relative;
+			padding-top: 10px;
+		}
+
+			#metamoris_form .button-group a { color: #fff;}
+
+		/*	Tooltip  */
+		#metamoris_form .input-block .tooltip {
+			position: absolute;
+			width: 253px;
+			line-height: 20px;
+			padding: 10px 15px 6px;
+			font-size: 11px;
+			text-align: center;
+			color: #fff;
+			text-align: left;
+			font-family: 'calibriregular', sans-serif;
+			background: rgb(255, 25, 0);
+			top: 28px;
+			right: -272px;
+			z-index: 1;
+			display: none;
+			
+
+			-webkit-border-radius: 5px;
+					border-radius: 5px;
+
+			-webkit-text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+					text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+
+			-webkit-box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
+					box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
+		}
+		
+			#metamoris_form .tooltip p {
+				line-height: 1.3;
+				padding-bottom: 33px;
+			}
+
+			#metamoris_form .tooltip b {
+				font-size: 14px;
+				display: block;
+				font-weight: 700;
+			}
+
+			#metamoris_form .tooltip span {
+				display: block;
+				font-size: 11px;
+				padding: 0 0 0 15px;
+			}
+
+				#metamoris_form .tooltip span:before {
+					display: block;
+					position: absolute;
+					left: 14px;
+					font: 14px 'fontello';
+					color: #fff;
+					content: '\e9af';
+				}
+
+			  #metamoris_form .tooltip:after {
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					border-width: 10px;
+					border-style: solid;
+					border-color: transparent #FF0000 transparent transparent;
+					top: 12px;
+					left: -20px;
+				}
+				.ie8 #metamoris_form .tooltip:after { left: -17px; }
+				/*	end Tooltip  */
+
+		/*------------------------------------------------------*/
+		/*	Form with substrate
+		/*------------------------------------------------------*/
+#rightcont {
+  border-left: 1px dotted #a2a2a2;
+  height: 451px;
+  margin-top: 20px;
+  font-size:14px;
+    width: 30%;
+}
+#rightcont2 {
+  height: 451px;
+  margin-top: 20px;
+  font-size:14px;
+    width: 30%;
+}
+
+
+		#metamoris_form.substrate {
+			padding: 0px 14px;
+			background-color: #fff;
+			overflow: hidden;
+
+
+		}
+
+		#metamoris_form.substrate .form-login-heading {
+			  font-size: 20px;
+			text-align: center;
+			margin: 0 -14px;
+			border-bottom: 1px solid #dadada;
+			color: #000000;
+			padding: 14px;
+			background-color: #F0F0F0;
+			background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F0F0F0 100%);
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #F0F0F0));
+			background-image: -webkit-linear-gradient(top, #F00B0B 0%, #990000 100%);
+
+
+		}
+
+			#metamoris_form.form-login.substrate .form-login-heading { margin: 0 -14px; }
+
+			#metamoris_form.substrate .form-login-heading span {
+				text-transform: uppercase;
+  				color: #E4E4E4;
+				padding: 0 2px 0 3px;
+			}
+
+		#metamoris_form.substrate input[type="text"],
+		#metamoris_form.substrate input[type="password"] {
+			border: 1px solid #c4cdcf;
+			outline: 0 none;
+		}
+
+			#metamoris_form.substrate .input-block label {
+				color: #748286;
+				font-size: 12px;
+			}
+
+			#metamoris_form.substrate .tip {
+				padding-top: 2px;
+				padding-bottom: 43px;
+				border-bottom: 1px solid #dadada; 
+			}
+
+			#metamoris_form.substrate .button-group { text-align: right; }
+
+	/*------------------------------------------------------*/
+	/*	Form wizard
+	/*------------------------------------------------------*/
+
+	.form-container {
+		width: 820px;
+		margin: 0 auto;
+	}
+
+	#metamoris_form { padding: 0 14px; }
+
+	#metamoris_form .form-login-heading {
+		font: 24px 'Oswald', sans-serif;
+		color: #000000;
+	}
+
+		#metamoris_form .form-login-heading span {
+			font-family: "Oswald", sans-serif;
+			color: #FF0000;
+			padding: 0 5px;
+		}
+
+		#metamoris_form .stage-container {
+			border-bottom: 1px solid #dadada;
+			padding: 15px 0px 14px 5px;
+		}
+
+			#metamoris_form .stage {
+				display: inline-block;
+				position: relative;
+				text-align: center;
+				min-height: 112px;
+			}
+
+				#metamoris_form .stage:before,
+				#metamoris_form .stage:after {
+					position: absolute;
+					background-color: #eaeaea;
+					top: 50%;
+					margin-top: -33px;
+					width: 50%;
+					height: 5px;
+					border-top: 1px solid #d9d9d9;
+					border-bottom: 1px solid #d9d9d9;
+					content: '';
+				}
+
+				#metamoris_form .stage:before { left: 0; }
+				#metamoris_form .stage:after  { right: 0; }
+
+				#metamoris_form .stage:first-child:before { display: none; }
+				#metamoris_form .stage:first-child + .stage + .stage + .stage:after { display: none; }
+
+		/*	Current stage  */
+		#metamoris_form .stage.tmm-current .stage-header {
+			background-color: #FF0000; 
+			border: none; 
+		}
+
+			#metamoris_form .stage.tmm-current .stage-header.head-number { 
+				color: #fff; 
+				text-shadow: 1px 1px 0px rgba(0, 0, 0, .9);
+			}
+
+			#metamoris_form .stage.tmm-current:after,
+			#metamoris_form .stage.tmm-current:before { 
+				background-color: #FF0000; 
+				border: none; 
+			}
+		/*	end Current stage  */
+
+		/*	Success stage  */
+		#metamoris_form .stage.tmm-success .stage-header { 
+			background-color: #92cf5c; 
+			border: none; 
+		}
+
+			#metamoris_form .stage.tmm-success .stage-header.head-number { 
+				color: #3c611b; 
+				text-shadow: 1px 1px 0px rgba(173, 219, 114, 1); 
+			}
+
+			#metamoris_form .stage.tmm-success:after,
+			#metamoris_form .stage.tmm-success:before { 
+				background-color: #92cf5c; 
+				border: none;
+			}
+
+			#metamoris_form .stage.tmm-success .stage-header:after {
+				margin-top: 6px;
+				position: absolute;
+				top: 51px;
+				left: -51px;
+				color: #696969;
+				font-family: 'fontello';
+				font-size: 16px;
+				color: #92cf5c;
+				content: '\e83b';
+                                text-shadow: none;
+                                font-weight: 100;
+			}
+                        
+                        #metamoris_form .stage.tmm-success .stage-header.head-number:after { top: 42px; }
+        /*	end Succes stage  */
+
+				#metamoris_form .stage-header {
+					display: inline-block;
+					width: 50px;
+					height: 50px;
+					background-color: #eaeaea;
+					text-align: center;
+					font-size: 20px;
+					color: #a9a9a9;
+					border: 1px solid #d9d9d9;
+					position: relative;
+					z-index: 1;
+                                        
+					-webkit-border-radius: 15%;
+							border-radius: 15%;
+				}
+                                
+                                #metamoris_form .stage-header.head-number {
+                                    color: #a9a9a9;
+                                    font-family: 'Arial', sans-serif;
+                                    font-weight: bold;
+                                    color: #a9a9a9;
+                                    font-family: 'Arial', sans-serif;
+                                    font-weight: bold;
+                                    line-height: 2.2em;
+                                    margin-bottom: 7px;
+                                }
+
+				#metamoris_form .stage-content {
+					width: 153px;
+					padding-left: 17px;
+					max-height: 52px;
+					margin: 0 auto;
+				}
+
+					#metamoris_form .stage-title {
+						font: 200 17px 'oswald', sans-serif;
+						color: #464646;
+						padding-left: 0px;
+						text-align: left;
+					}
+
+					#metamoris_form .stage-info {
+						text-align: left;
+						color: #a8a8a8;
+						font-family: 'calibriregular', sans-serif;
+						font-size: 11px;
+						line-height: 1.4;
+					}
+
+		/* -------------------------------------------------- */
+		/*	Portable Form
+		/* -------------------------------------------------- */
+
+		#metamoris_form .form-header {
+			font: 20px 'oswald' sans-serif;
+			padding-top: 15px;
+			padding-bottom: 36px;
+		}
+
+			#metamoris_form .form-title {
+				float: left;
+				padding-left: 22px;
+				color: #7e8b8f;
+			}
+
+			#metamoris_form .form-title-2 {
+				float: left;
+				padding-left: 32px;
+			}
+
+				#metamoris_form .form-title b {
+					font-weight: 200;
+					color: #FF0000;
+				}
+
+				#metamoris_form .form-title-2 b {
+					font-weight: 200;
+					color: #ff0000;
+				}
+
+			#metamoris_form .steps {
+				color: #636363;
+				float: right;
+				padding-right: 15px;
+				padding-bottom:5px;
+			}
+
+		#metamoris_form .form-metamoris { 
+			padding: 5px 12px 23px;
+			min-height: 505px;
+		}
+
+			#metamoris_form .next,
+			#metamoris_form .prev {
+				position: relative;
+				padding-top: 12px;
+			}
+
+				#metamoris_form .prev {	float: left; }
+				#metamoris_form .next {	float: right; }
+
+			#metamoris_form .next .button.button-control span,
+			#metamoris_form .prev .button.button-control span {
+				text-align: left;
+				text-transform: none;
+				line-height: 1;
+			}
+
+				#metamoris_form .prev .button.button-control span {  padding: 6px 9px 9px 43px; }
+				#metamoris_form .next .button.button-control span { padding: 6px 45px 9px 6px; }
+
+				#metamoris_form .prev .button.button-control span:after,
+				#metamoris_form .next .button.button-control span:after {
+					position: absolute;
+					font-size: 20px;
+					font-family: 'fontello';
+					color: #fff;
+					top: 25px;
+				}
+
+				#metamoris_form .next .button.button-control span:after { right: 9px; content: '\e8bc';}
+				#metamoris_form .prev .button.button-control span:after { left: 9px; content: '\e8bb';}
+
+				#metamoris_form .button.button-control span b {
+					text-transform: none;
+					display: block;
+					font-weight: 200;
+					line-height: 1;
+					font-size: 12px;
+					font-family: 'calibriregular', sans-serif;
+				}
+
+				/*	button divider  */
+				#metamoris_form .next .button-divider, 
+				#metamoris_form .prev .button-divider {
+					  position: absolute;
+					  height: 57%;
+					  width: 2px;
+					  top: 14px;
+				}
+
+				#metamoris_form .prev .button-divider {	left: 34px; }
+				#metamoris_form .next .button-divider { right: 34px; }
+				/*	end button divider  */
+
+
+		#metamoris_form .dropdown {
+			display: block;
+			position: relative;
+			overflow: hidden;
+			border: 1px solid;
+			border-color: white #f7f7f7 whitesmoke;
+			border: 1px solid #c4cdcf;
+
+			-webkit-border-radius: 3px;
+					border-radius: 3px;
+		}
+
+			#metamoris_form .dropdown:before, 
+			#metamoris_form .dropdown:after {
+				position: absolute;
+				top: 9px;
+				right: 6px;
+				width: 0;
+				height: 0;
+				border: 4px dashed;
+				border-color: #97adb5 transparent;
+				pointer-events: none;
+				content: '';
+				z-index: 4;
+			}
+
+				#metamoris_form .dropdown:before {
+					border-bottom-style: solid;
+					border-top: none;
+				}
+
+				#metamoris_form .dropdown:after {
+					margin-top: 7px;
+					border-top-style: solid;
+					border-bottom: none;
+				}
+
+		#metamoris_form .dropdown-select {
+			position: relative;
+			width: 100%;
+			margin: 0;
+			padding-left: 6px;
+			font-size: 12px;
+			color: #b5b5b5;
+			background: #fff;
+			text-indent: 0.01px;
+			text-overflow: "";
+			outline: none;
+			height: 34px;
+			font-style: normal;
+			-webkit-appearance: none !important;
+		}
+                
+		#metamoris_form .dropdown-select:hover { background-color: #F0F0F0; }
+
+		#metamoris_form .dropdown-select:focus {
+			width: 100%;
+			color: #394349;
+			z-index: 2;
+		}
+                
+		/*	IE10 */
+		#metamoris_form select::-ms-expand {
+			display: none;
+		}
+			#metamoris_form .dropdown-select > option {
+				margin: 3px;
+				text-shadow: none;
+				background: #f2f2f2;
+				cursor: pointer;
+				hite-space: nowrap;
+				text-overflow: ellipsis; 
+				-webkit-appearance:button;
+
+				-webkit-border-radius: 3px;
+						border-radius: 3px;
+			}
+                        
+                        @-moz-document url-prefix() {
+                            #metamoris_form .dropdown:before,
+                            #metamoris_form .dropdown:after {
+                                content: none;
+                            }
+
+                            #metamoris_form .dropdown-select {
+                                width: 119%;
+                                background-color: #fff;
+                                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGxJREFUeNpi+I8Krt9/tPf0BTRBFgYkcOPB4wPnLkPYTib6cHEmrCpuPXq678xFdEXIKjDVMQKtZCAEmBiIAEQpYsHlJiBQlZVyNjVAmKShIOtgpItVBYp1yOqQVYAAZojvOXUeTZCoIAAIMACwaW9Tv3i0rgAAAABJRU5ErkJggg==);
+                                background-position: 82% center;
+                                background-repeat: no-repeat;
+                            }
+                            
+                            #metamoris_form .dropdown-select:hover { 
+                                background-color: #fff;
+                                width: 119%; 
+                            }
+                            
+                             #metamoris_form .dropdown-select:focus { 
+                                width: 119%; 
+                            }
+                    
+                            #metamoris_form .dropdown-select > option:focus { width: 119%; }
+                        }
+
+			/* Fix for IE 8 putting the arrows behind the select element. */
+			.lt-ie9 #metamoris_form .dropdown { z-index: 1; }
+
+			.lt-ie9 #metamoris_form .dropdown-select { z-index: -1; }
+
+			.lt-ie9 #metamoris_form .dropdown-select:focus { z-index: 3; }
+
+			@-moz-document url-prefix() { .dropdown-select { padding: 8px 6px; } }
+			/* end Fix for IE 8 putting the arrows behind the select element. */		
+
+			#metamoris_form dl { line-height: 1.8;}
+
+			#metamoris_form dt, 
+			#metamoris_form dd {
+				display: inline-block;
+				font: 14px 'calibriregular', sans-serif;
+			}
+
+			#metamoris_form dt {
+				width: 30%;
+				color: #a0aeb2;
+			}
+
+			#metamoris_form dd { color: #6b7a7e; }
+
+			#metamoris_form .data-container {
+
+			}
+
+			/* -------------------------------------------------- */
+			/*	Sprite Icons
+			/* -------------------------------------------------- */	
+
+			/*	Stage Icons	 */
+			.head-icon {
+				display: block;
+				background: url(../images/header-sprite.png) no-repeat 0 0;
+			}
+
+				.head-icon.head-icon-lock { background-position: 10px -22px; }
+
+				.tmm-success > .head-icon.head-icon-lock,
+				.tmm-current > .head-icon.head-icon-lock { background-position: 10px -423px; }
+
+				.head-icon.head-icon-user { background-position: 8px -107px; }
+
+				.tmm-success > .head-icon.head-icon-user,
+				.tmm-current > .head-icon.head-icon-user { background-position: 9px -506px; }
+
+				.head-icon.head-icon-payment { background-position: 9px -206px; }
+
+				.tmm-success > .head-icon.head-icon-payment,
+				.tmm-current > .head-icon.head-icon-payment { background-position: 9px -606px; }
+
+				.head-icon.head-icon-details { background-position: 8px -312px; }
+
+				.tmm-success > .head-icon.head-icon-details,
+				.tmm-current > .head-icon.head-icon-details { background-position: 8px -713px; }
+				/*	end Stage Icons	 */
+
+
+			/*	Form Icons  */	
+			.form-icon {
+				display: block;
+				background: url(../images/sprite.png) no-repeat 0 0;
+			}
+
+				.form-icon.form-icon-user  { background-position: right -19px; }
+
+				.form-icon.form-icon-lock  { background-position: right -63px; }
+
+				.form-icon.form-icon-mail  { background-position: right -114px; }
+
+				.form-icon.form-icon-phone { background-position: right -158px; }
+
+			/*	Form title Icons  */	
+			.form-icon.title-icon-user	   { background-position: -10px -22px; }
+
+			.form-icon.title-icon-lock	   { background-position: -10px -70px; }
+
+			.form-icon.title-icon-payment  { background-position: -10px -209px; }
+
+			.form-icon.title-icon-card     { background-position: 0px -260px; }
+
+		/* ---------------------------------------------------------------------- */
+		/*	FORM COLOR CONFIGURATIONS
+		/* ---------------------------------------------------------------------- */
+
+		/*	Input filds  */
+		#metamoris_form input[type="text"],
+		#metamoris_form input[type="password"]								{ background-color: #fff; }		/*	Set background color for INPUT FILDS  */
+		#metamoris_form input[type="text"]:hover,
+		#metamoris_form input[type="password"]:hover						{ background-color: #F0F0F0; }	/*  Set background color for INPUT FILDS on hover  */
+		/*	end Input filds  */
+
+		/*	Stage  */
+		#metamoris_form .stage:before,
+		#metamoris_form .stage:after						{ background-color: #eaeaea; }  /*  Set color for STAGE LINE  */
+		#metamoris_form .stage-header						{ background-color: #eaeaea; }  /*	Set background color for STAGE HEADER  */
+		#metamoris_form .stage-title						{ color: #464646; }				/*	Set color for STAGE TITLE  */
+		#metamoris_form .stage-info						{ color: #a8a8a8;}				/*	Set color for STAGE INFO  */
+		/*	end Stage  */
+
+		/*	Current stage  */
+		#metamoris_form .stage.tmm-current .stage-header		{ background-color: #FF0000; }	/*	Set background color for CURRENT STAGE  */	
+		#metamoris_form .stage.tmm-current .stage-header.head-number   { color: #fff; }				/*	Set color for CURRENT STAGE TEXT  */
+		#metamoris_form .stage.tmm-current:after,
+		#metamoris_form .stage.tmm-current:before				{ background-color: #FF0000; }	/*	Set background color for CURRENT STAGE LINE  */
+		/*	end Current stage  */
+
+		/*	Success stage  */
+		#metamoris_form .stage.tmm-success .stage-header		{ background-color: #92cf5c; }	/*	Set background color for SUCCESS STAGE  */	
+		#metamoris_form .stage.tmm-success .stage-header.head-number { color: #3c611b; }				/*	Set color for SUCCESS STAGE TEXT  */
+		#metamoris_form .stage.tmm-success:after,
+		#metamoris_form .stage.tmm-success:before				{ background-color: #92cf5c; }	/*	Set background color for SUCCESS STAGE LINE  */
+		#metamoris_form .stage.tmm-success .stage-header:after { color: #92cf5c; }				/*  Set color for SUCCESS STAGE ICON  */
+		/*	end Success stage  */
+
+		/*	Form elements  */
+		#metamoris_form .form-title						{ color: #7e8b8f; }				/*	Set color for FORM TITLE  */
+		#metamoris_form .steps								{ color: #636363; }				/*	Set color for FORM STEPS  */
+		#metamoris_form .form-metamoris						{ background-color: #f0f0f0; }  /*	Set background color for FORM  */
+		#metamoris_form .dropdown-select					{ color: #b5b5b5; }				/*	Set color for SELECT TEXT  */
+		#metamoris_form .data-container					{ background-color: ; }		/*	Set background color for DATA CONTAINER(last stage)  */
+		#metamoris_form.substrate							{ background-color: #fff; }	    /*  Set background color for FORM SUBSTRATE  */
+		#metamoris_form .tip a								{ color: #FF0000; }		   	    /*  Set color for TIP  */
+		/*	end Form elements  */
+
+		/*	Tooltip  */
+		#metamoris_form .tooltip							{ background: rgb(251, 107, 91); }								 /*	 Set background color for TOOLTIP   */
+		#metamoris_form .tooltip:after						{ border-color: transparent #FF0000 transparent transparent; }   /*	 Set color for TOOLTIP TRIANGLE  */
+		#metamoris_form .tooltip							{ color: #fff; }													 /*	 Set color for TOOLTIP TEXT  */
+		/*	end Tooltip  */
+
+
