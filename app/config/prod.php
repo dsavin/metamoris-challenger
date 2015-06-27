@@ -13,7 +13,7 @@ $conf['assetic'] = [
     'assetic.path_to_web' => ROOT_DIR . '/web/assets',
     'assetic.options' => [
         'debug'              => false,
-        'auto_dump_assets' => true
+        'auto_dump_assets' => false
     ],
 
     'assetic.path_to_cache' => ROOT_DIR  . '/var/cache/assetic',
@@ -21,7 +21,7 @@ $conf['assetic'] = [
 ];
 $conf['monolog']['monolog.logfile'] = ROOT_DIR . '/var/logs/prod.log';
 
-$conf['assets_url'] = '/assets/';
+$conf['assets_url'] = '/challenger/web/assets/';
 
 if (APPLICATION_ENV === 'dev') {
     require_once ROOT_DIR . '/app/config/dev.php';

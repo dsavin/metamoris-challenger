@@ -9,4 +9,4 @@ $conf['twig']['twig.options'] = [
 
 $conf['monolog']['monolog.logfile'] = ROOT_DIR . '/var/logs/dev.log';
 
-
+$conf['assets_url'] = '/assets/';
