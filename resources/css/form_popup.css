@@ -1,3 +1,4 @@
+
 /*********** INFORMATION *****************************
 
 - document:  Slick and Clean CSS3 forms pack
@@ -6,11 +7,11 @@
 - profile:   http://codecanyon.net/user/Capelle
 
 *****************************************************/
+
 /*  ==================
     1. FONTS
     ==================  */
 @import url(http://fonts.googleapis.com/css?family=Oswald);
-
 @charset "UTF-8";
 @font-face {
     font-family: 'entypo';
@@ -1163,6 +1164,7 @@
     font-family: 'entypo', sans-serif;
 }
 
+
 /*  ==================
     2. ITEM RESET
     ==================  */
@@ -1182,23 +1184,19 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 #slick label {
     cursor: pointer;
 }
-
 #slick input[type="checkbox"],
 #slick input[type="radio"] {
     display: none;
     visibility: hidden;
     opacity: 0;
 }
-
 #slick a {
     text-decoration: none;
     color: #333;
 }
-
 #slick {
     width: 480px; /* <-- Adjust this value to change the width of the forms */
     position: absolute;
@@ -1208,9 +1206,9 @@
     margin: 0 auto;
     z-index: 10;
 }
-
 /* === Note === If you experience issues with reset above, please adjust the selectors and values according to your template/website.
 When adjusting the reset is adviced to check up the elements on your page, as they might distort. */
+
 
 /*  ==================
     3. MAIN STYLES
@@ -1229,14 +1227,12 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     visibility: hidden;
     z-index: -1;
 }
-
 #slick-popup:target {
     opacity: 1;
     visibility: visible;
     z-index: 99999;
     overflow: auto;
 }
-
 #slick .forms {
     background: #fff;
     position: relative;
@@ -1249,7 +1245,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
 }
-
 #slick .forms > div {
     position: absolute;
     top: 0;
@@ -1263,7 +1258,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     padding: 40px;
     float: left;
 }
-
 #slick input#login.login-selector:checked ~ .forms .login-form,
 #slick input#register.register-selector:checked ~ .forms .register-form,
 #slick input#reset.reset-selector:checked ~ .forms .reset-form {
@@ -1272,7 +1266,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     opacity: 1;
     visibility: visible;
 }
-
 #slick .w-100,
 #slick .w-75,
 #slick .w-47,
@@ -1282,63 +1275,48 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     display: inline-block;
     position: relative;
 }
-
 #slick .w-100 {
     width: 100%;
 }
-
 #slick .w-75 {
     width: 75%;
 }
-
 #slick .w-47 {
     width: 47%;
 }
-
 #slick .w-30 {
     width: 30%;
 }
-
 #slick .w-20 {
     width: 20%;
 }
-
 #slick .mr-5 {
     margin-right: 5%;
 }
-
 #slick .mr-6 {
     margin-right: 6%;
 }
-
 #slick .mt-5 {
     margin-top: 5px;
 }
-
 #slick .mt-10 {
     margin-top: 10px;
 }
-
 #slick .mt-20 {
     margin-top: 20px;
 }
-
 #slick .mb-10 {
     margin-bottom: 10px;
 }
-
 #slick .mb-20 {
     margin-bottom: 20px;
 }
-
 #slick .mb-30 {
     margin-bottom: 30px;
 }
-
 #slick .bt {
     border-top: solid 1px #f0f0f0;
 }
-
 #slick .clrfx {
     clear: both;
     display: block;
@@ -1346,7 +1324,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     float: left;
     position: relative;
 }
-
 #slick .clrfx.merge {
     width: 100%;
     height: 12px;
@@ -1356,7 +1333,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     left: 0;
     z-index: 998;
 }
-
 #slick span.inner-title {
     position: absolute;
     top: -9px;
@@ -1371,7 +1347,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     color: #bbb;
     text-align: center;
 }
-
 #slick-popup a.close-overlay {
     position: absolute;
     width: 100%;
@@ -1379,6 +1354,7 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     content: "";
     z-index: 0;
 }
+
 
 /*  ==================
     4. NAV LABELS
@@ -1399,12 +1375,10 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     margin: 0 4px 0 0;
     text-align: center;
 }
-
 #slick label.tabs:hover {
     background: #999;
     color: #fff;
 }
-
 #slick input:checked + label.tabs {
     background: #fff;
     color: #ff2424;
@@ -1413,6 +1387,7 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     -moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7);
 }
+
 
 /*  ==================
     5. TEXT ELEMENTS
@@ -1442,21 +1417,17 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     clear: both;
     width: 100%;
 }
-
 #slick p.intro b {
     color: #FF2424;
 }
-
 #slick p.small {
     color: #bbb;
     font-size: 10px;
 }
-
 #slick p.small span {
     padding-right: 4px;
     color: #333;
 }
-
 #slick p.tick-text {
     font-size: 10px;
     color: #999;
@@ -1464,14 +1435,12 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     float: left;
     margin: 8px 0 0 10px;
 }
-
 #slick p.ratings {
     font-size: 12px;
     color: #999;
     display: inline-block;
     float: left;
 }
-
 #slick p.ratings span {
     font-size: 16px;
     color: #ddd;
@@ -1494,19 +1463,16 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     visibility: hidden;
     z-index: -1;
 }
-
 #slick span.slick-tip.right {
     right: -30px;
     bottom: 36px;
     background: #fff;
     color: #222;
 }
-
 #slick span.slick-tip.left {
     left: 20px;
     top: -44px;
 }
-
 #slick span.slick-tip:before {
     content: "";
     position: absolute;
@@ -1517,28 +1483,23 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     border-right: 10px solid transparent;
     border-top: 6px solid rgba(51, 51, 51, 1);
 }
-
 #slick span.slick-tip.right:before {
     right: 30px;
     margin-left: -10px;
 }
-
 #slick span.slick-tip.right:before {
     border-top: 6px solid rgba(255, 255, 255, 1);
 }
-
 #slick span.slick-tip.left:before {
     left: 20px;
     margin-right: -10px;
 }
-
 #slick input:focus ~ .slick-tip,
 #slick .sb a:hover span.slick-tip {
     opacity: 1;
     visibility: visible;
     z-index: 9999;
 }
-
 #slick input:required:valid ~ .slick-tip {
     opacity: 0;
     visibility: hidden;
@@ -1553,7 +1514,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     right: 40px;
     z-index: 999;
 }
-
 #slick .sb a {
     background: #ddd;
     color: #fff;
@@ -1566,27 +1526,23 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     height: 24px;
     line-height: 24px;
 }
-
 #slick .sb a.fb:hover {
     background: #3B5998;
 }
-
 #slick .sb a.tw:hover {
     background: #4099FF;
 }
-
 #slick .sb a.gc:hover {
     background: #dd4b39;
 }
-
 #slick .sb a.close-top {
     background: #FF2424;
     margin-left: 20px;
 }
-
 #slick .sb a.close-top:hover {
     background: #333;
 }
+
 
 /*  ==================
     6. INPUTS
@@ -1601,7 +1557,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     float: left;
     margin-bottom: 20px;
 }
-
 #slick .field span.icon {
     position: absolute;
     top: 0;
@@ -1614,7 +1569,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     width: 38px;
     height: 100%;
 }
-
 #slick .field input {
     padding: 12px 20px 10px 50px;
     width: 100%;
@@ -1623,13 +1577,11 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     font-size: 12px;
     border: solid 1px #ddd;
 }
-
 #slick .field > input:hover,
 #slick .field > input:focus {
     border: solid 1px #333;
     outline: none;
 }
-
 #slick input:hover ~ span.icon,
 #slick input:focus ~ span.icon {
     outline: none;
@@ -1642,43 +1594,34 @@ When adjusting the reset is adviced to check up the elements on your page, as th
 #slick input::-webkit-input-placeholder {
     color: #999;
 }
-
 #slick input:focus::-webkit-input-placeholder {
     color: #ccc;
 }
-
 /*-- Firefox 19 down --*/
 #slick input:-moz-placeholder {
     color: #999;
 }
-
 #slick input:focus:-moz-placeholder {
     color: #ccc;
 }
-
 /*-- Firefox 19 up --*/
 #slick input::-moz-placeholder {
     color: #999;
 }
-
 #slick input:focus::-moz-placeholder {
     color: #ccc;
 }
-
 /*-- IE 10+ --*/
 #slick input:-ms-input-placeholder {
     color: #999;
 }
-
 #slick input:focus:-ms-input-placeholder {
     color: #ccc;
 }
-
 /*-- IE 9 --*/
 #slick .ie9-placeholder {
     color: #999 !important;
 }
-
 #slick .ie9-placeholder:focus {
     color: #ccc !important;
 }
@@ -1690,19 +1633,16 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     outline: none;
     box-shadow: none;
 }
-
 #slick .field input:hover:invalid {
     background: #fff url(img/focused.png) no-repeat 100% 15px;
     outline: none;
     box-shadow: none;
 }
-
 #slick .field input:required:valid {
     background: #fff url(img/valid.png) no-repeat 100% 15px;
     outline: none;
     box-shadow: none;
 }
-
 #slick .field input:focus:invalid {
     background: #fff url(img/invalid.png) no-repeat 100% 15px;
     outline: none;
@@ -1725,7 +1665,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     float: right;
     clear: none;
 }
-
 #slick input.send:hover,
 #slick input.send:focus {
     border: none;
@@ -1742,7 +1681,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     display: inline-block;
     float: left;
 }
-
 #slick label.tick:before {
     position: absolute;
     display: inline-block;
@@ -1752,7 +1690,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     background: #fff;
     border: solid 2px #ddd;
 }
-
 #slick label.tick:after {
     opacity: 0;
     visibility: hidden;
@@ -1772,18 +1709,15 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
-
 #slick input:checked + label.tick:after {
     opacity: 1;
     visibility: visible;
 }
-
 #slick label.tick span {
     font-size: 11px;
     color: #999;
     padding-left: 26px;
 }
-
 #slick label.tick:hover span {
     color: #333;
 }
@@ -1797,7 +1731,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     position: relative;
     float: left;
 }
-
 #slick .slide-chk:after,
 #slick .slide-chk:before {
     font-size: 10px;
@@ -1807,19 +1740,16 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     width: 50%;
     text-transform: uppercase;
 }
-
 #slick .slide-chk:before {
     content: 'Yes';
     left: 0;
     color: #222;
 }
-
 #slick .slide-chk:after {
     content: 'No';
     right: 0;
     color: #999;
 }
-
 #slick .slide-chk label {
     display: block;
     width: 50%;
@@ -1831,15 +1761,14 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     background: #FF2424;
     content: "";
 }
-
 #slick .slide-chk label:hover {
     background: #333;
 }
-
 #slick .slide-chk input[type=checkbox]:checked + label {
     left: 50%;
     background: #05C742;
 }
+
 
 /*  ==================
     7. MODALS
@@ -1854,11 +1783,9 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     font-size: 10px;
     color: #bbb;
 }
-
 #slick .terms a {
     color: #333;
 }
-
 #slick .terms-window {
     position: fixed;
     width: 100%;
@@ -1873,13 +1800,11 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     visibility: hidden;
     z-index: -1;
 }
-
 #slick .terms-window:target {
     opacity: 1;
     visibility: visible;
     z-index: 9999;
 }
-
 #slick .terms-window > div {
     width: 440px;
     height: auto;
@@ -1889,7 +1814,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     padding: 40px;
     background: #fff;
 }
-
 #slick .terms-window a.close {
     color: #ddd;
     font-size: 18px;
@@ -1897,10 +1821,10 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     top: 50px;
     right: 30px;
 }
-
 #slick .terms-window a.close:hover {
     color: #333;
 }
+
 
 /*  ==================
     8. TRANSITIONS
@@ -1919,7 +1843,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-
 #slick input#login.login-selector:checked ~ .forms .login-form,
 #slick input#register.register-selector:checked ~ .forms .register-form,
 #slick input#reset.reset-selector:checked ~ .forms .reset-form {
@@ -1929,6 +1852,7 @@ When adjusting the reset is adviced to check up the elements on your page, as th
     -o-transition: all ease 0.3s 0.1s;
     transition: all ease 0.3s 0.1s;
 }
+
 
 /*  ==================
     9. MEDIA QUERIES
@@ -2027,7 +1951,6 @@ When adjusting the reset is adviced to check up the elements on your page, as th
         margin-bottom: 20px;
     }
 }
-
 /***********************
     Demo page styles
 ************************/
@@ -2039,26 +1962,21 @@ body {
     margin: 0;
     padding: 0;
 }
-
 #page,
 #page-2,
 #page-3 {
     margin: 50px auto 0 auto;
     position: relative;
 }
-
 #page {
     width: 1000px;
 }
-
 #page-2 {
     width: 480px;
 }
-
 #page-3 {
     width: 640px;
 }
-
 .demo {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     padding: 0 0 50px 0;
@@ -2070,7 +1988,6 @@ body {
     margin: 0 auto;
     text-shadow: 1px 1px #797979;
 }
-
 .demo h1 {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-size: 11px;
@@ -2079,7 +1996,6 @@ body {
     letter-spacing: 1px;
     font-weight: normal;
 }
-
 a.popup-button {
     display: block;
     width: 100px;
@@ -2093,12 +2009,10 @@ a.popup-button {
     text-transform: uppercase;
     text-align: center;
 }
-
 a.popup-button:hover {
     background: #fff;
     color: #222;
 }
-
 .description {
     width: 100%;
     display: block;
@@ -2106,13 +2020,11 @@ a.popup-button:hover {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     color: #fff;
 }
-
 .description * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 .description .block {
     width: 30%;
     display: inline-block;
@@ -2121,21 +2033,17 @@ a.popup-button:hover {
     font-size: 16px;
     float: left;
 }
-
 .description .block.mr-5 {
     margin-right: 5%;
 }
-
 .description .block.mb-40 {
     margin-bottom: 40px;
 }
-
 .description .block span {
     display: block;
     font-size: 54px;
     margin-bottom: 10px;
 }
-
 .description .block p {
     font-size: 12px;
     line-height: 16px;
@@ -2144,7 +2052,6 @@ a.popup-button:hover {
     padding: 0 20px;
     text-transform: none;
 }
-
 #links {
     display: block;
     float: left;
@@ -2155,18 +2062,15 @@ a.popup-button:hover {
     background: #fff;
     box-shadow: 0 0 20px #333;
 }
-
 #links * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 #links .links-wrap {
     width: 1000px;
     margin: 0 auto
 }
-
 #links .title-1 {
     font-size: 24px;
     color: #ff2424;
@@ -2176,12 +2080,10 @@ a.popup-button:hover {
     margin-bottom: 30px;
     text-transform: uppercase;
 }
-
 #links .title-1 span {
     padding-right: 16px;
     font-size: 30px;
 }
-
 #links .title-2 {
     font-size: 14px;
     color: #bbb;
@@ -2194,7 +2096,6 @@ a.popup-button:hover {
     padding: 0 20px 10px 20px;
     border-bottom: solid 1px #f0f0f0;
 }
-
 #links a {
     text-decoration: none;
     color: #333;
@@ -2204,20 +2105,17 @@ a.popup-button:hover {
     float: left;
     width: 25%;
 }
-
 #links a:hover,
 #links a:hover span {
     background: #ff2424;
     color: #fff;
 }
-
 #links a span {
     color: #999;
     padding-right: 10px;
     font-size: 10px;
     display: inline-block;
 }
-
 #links a.buy {
     background: #ff2424;
     color: #fff;
@@ -2231,11 +2129,9 @@ a.popup-button:hover {
     display: block;
     margin: 0 auto;
 }
-
 #links a.buy:hover {
     background: #333;
 }
-
 #links span.price {
     font-size: 24px;
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
@@ -2245,14 +2141,12 @@ a.popup-button:hover {
     display: block;
     text-align: center;
 }
-
 #links span.price span {
     font-size: 50px;
     vertical-align: middle;
     padding-left: 6px;
     color: #555;
 }
-
 .clrfx-buy {
     width: 100%;
     display: block;
@@ -2260,7 +2154,6 @@ a.popup-button:hover {
     margin: 30px 0;
     float: left;
 }
-
 a.go-back {
     font-size: 16px;
     color: #fff;
@@ -2273,7 +2166,6 @@ a.go-back {
     float: none;
     display: block;
 }
-
 a.go-back span {
     padding-right: 6px;
 }
