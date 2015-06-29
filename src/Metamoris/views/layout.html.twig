@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
     <head>
-        <title>{% block title '' %} - Challenger - Metamoris</title>
 
+    <title>{% block title '' %} - Challenger - Metamoris</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Metamoris Sign up and Registration form"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Forms stylesheet -->
         {% stylesheets 'css/form.css' filter='cssmin' %}
         <link href="{{ app.conf.assets_url }}{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
@@ -18,8 +23,19 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
+    <!-- / Forms stylesheet -->
+
+    <script type="text/javascript">''</script>
     </head>
     <body>
+    <div id="container">
         {% block content %}{% endblock %}
+    </div>
+
+    <!--[if IE 9]>
+    <script type="text/javascript"
+            src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/placeholder.js"></script>
+    <![endif]-->
     </body>
 </html>

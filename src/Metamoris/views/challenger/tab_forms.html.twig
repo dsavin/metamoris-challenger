@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <section id="slick">
+        {{ include('partials/tabs.html.twig') }}
+        <!-- Forms wrapper -->
+        <div class="forms">
+            {{ include('partials/tab_forms/register_form.html.twig') }}
+            {{ include('partials/tab_forms/login_form.html.twig') }}
+            {{ include('partials/tab_forms/reset_form.html.twig') }}
+        </div>
+        <!-- / Forms wrapper -->
+        {{ include('partials/tac.html.twig') }}
+    </section>
+{% endblock %}

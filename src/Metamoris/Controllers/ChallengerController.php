@@ -9,11 +9,11 @@ class ChallengerController
 {
     public function homeAction(Application $app)
     {
-        return $app['twig']->render('index.html.twig');
+        return $app['twig']->render('challenger/tab_forms.html.twig');
     }
 
-    public function helloAction(Application $app, $name)
+    public function tabFormsAction(Application $app, $name)
     {
-        return new Response("Hello" . $app->escape($name));
+        return $app['twig']->render('challenger/tab_forms.html.twig');
     }
 }
