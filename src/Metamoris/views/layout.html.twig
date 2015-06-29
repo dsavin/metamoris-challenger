@@ -1,3 +1,4 @@
+{% spaceless %}
 <!DOCTYPE html>
     <head>
 
@@ -7,25 +8,22 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Forms stylesheet -->
-        {% stylesheets 'css/form.css' filter='cssmin' %}
-        <link href="{{ app.conf.assets_url }}{{ asset_url }}" type="text/css" rel="stylesheet" />
-        {% endstylesheets %}
+    {% block stylesheets %}{% endblock %}
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+        _gaq.push(['_trackPageview']);
 
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-            _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
-    <!-- / Forms stylesheet -->
-
-    <script type="text/javascript">''</script>
     </head>
     <body>
     <div id="container">
@@ -35,7 +33,8 @@
     <!--[if IE 9]>
     <script type="text/javascript"
             src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="js/placeholder.js"></script>
+    {% block javascripts %}{% endblock %}
     <![endif]-->
     </body>
 </html>
+{% endspaceless %}

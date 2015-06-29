@@ -62,6 +62,7 @@ $app->register(new SilexAssetic\AsseticServiceProvider(), $conf['assetic']);
 
 $app->extend('assetic.filter_manager', function ($fm, $app) {
     $fm->set('cssmin', new Assetic\Filter\MinifyCssCompressorFilter());
+    $fm->set('jsmin', new \Assetic\Filter\JSMinFilter());
     return $fm;
 });
 

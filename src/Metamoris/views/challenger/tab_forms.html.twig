@@ -1,5 +1,20 @@
 {% extends "layout.html.twig" %}
 
+{% block stylesheets %}
+    <!-- Forms stylesheet -->
+    {% stylesheets 'css/form.css' filter='cssmin' %}
+    <link href="{{ app.conf.assets_url }}{{ asset_url }}" type="text/css"
+          rel="stylesheet"/>
+    {% endstylesheets %}
+    <!-- / Forms stylesheet -->
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 'js/jquery.validate.min.js' filter="jsmin" %}
+    <script src="{{ app.conf.assets_url }}{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
 {% block content %}
     <section id="slick">
         {{ include('partials/tabs.html.twig') }}
