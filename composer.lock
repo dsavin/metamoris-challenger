@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8f750fc472477f7394099bcfea062db6",
+    "hash": "ffcc188bc3bcf12c3e9b2f7527c08fab",
     "packages": [
         {
             "name": "kriswallsmith/assetic",
@@ -348,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex.git",
-                "reference": "ef2a6803d09fd4cf27eccc83f70a22b9b0166e60"
+                "reference": "14dd741685c3b35573a14a92e871e499b49bb75d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex/zipball/ef2a6803d09fd4cf27eccc83f70a22b9b0166e60",
-                "reference": "ef2a6803d09fd4cf27eccc83f70a22b9b0166e60",
+                "url": "https://api.github.com/repos/silexphp/Silex/zipball/14dd741685c3b35573a14a92e871e499b49bb75d",
+                "reference": "14dd741685c3b35573a14a92e871e499b49bb75d",
                 "shasum": ""
             },
             "require": {
@@ -427,7 +427,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2015-06-24 18:53:42"
+            "time": "2015-06-28 07:15:29"
         },
         {
             "name": "silex/web-profiler",

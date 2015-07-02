@@ -21,6 +21,9 @@ $app->register(new Provider\ValidatorServiceProvider());
 $app->register(new Provider\ServiceControllerServiceProvider());
 $app->register(new Provider\HttpFragmentServiceProvider());
 $app->register(new Provider\TwigServiceProvider(), $conf['twig']);
+$app->register(new Provider\DoctrineServiceProvider(), $conf['db']);
+$app->register(new Provider\SwiftmailerServiceProvider());
+$app->register(new Provider\FormServiceProvider());
 
 if (APPLICATION_ENV === 'dev') {
     Debug::enable();

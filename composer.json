@@ -24,8 +24,8 @@
         "symfony/yaml":"v2.7.0",
         "mheap/silex-assetic": "*",
         "mrclay/minify": "*",
-        "tubalmartin/cssmin": "*"
-
+      "tubalmartin/cssmin": "*",
+      "symfony/security-csrf": "^2.7"
     },
     "autoload": {
         "psr-0": { "": "src/" }

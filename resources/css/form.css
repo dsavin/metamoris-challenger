@@ -16,11 +16,11 @@
     font-family: 'entypo';
     font-style: normal;
     font-weight: normal;
-    src: url('icons/entypo/entypo.eot');
-    src: url('icons/entypo/entypo.eot?#iefix') format('eot'),
-    url('icons/entypo/entypo.woff') format('woff'),
-    url('icons/entypo/entypo.ttf') format('truetype'),
-    url('icons/entypo/entypo.svg#entypo') format('svg');
+    src: url('../../icons/entypo/entypo.eot');
+    src: url('../../icons/entypo/entypo.eot?#iefix') format('eot'),
+    url('../../icons/entypo/entypo.woff') format('woff'),
+    url('../../icons/entypo/entypo.ttf') format('truetype'),
+    url('../../icons/entypo/entypo.svg#entypo') format('svg');
 }
 
 .entypo-note:before {
@@ -1642,27 +1642,41 @@ When adjusting the reset is adviced to check up the elements on your page, as th
 /***** Validations *****/
 
 #slick .field input:required {
-    background: #fff url(img/required.png) no-repeat 100% 15px;
+    background: #fff url(../../img/required.png) no-repeat 100% 15px;
     outline: none;
     box-shadow: none;
 }
 
 #slick .field input:hover:invalid {
-    background: #fff url(img/focused.png) no-repeat 100% 15px;
+    background: #fff url(../../img/focused.png) no-repeat 100% 15px;
     outline: none;
     box-shadow: none;
 }
 
 #slick .field input:required:valid {
-    background: #fff url(img/valid.png) no-repeat 100% 15px;
+    background: #fff url(../../img/valid.png) no-repeat 100% 15px;
     outline: none;
     box-shadow: none;
 }
 
-#slick .field input:focus:invalid {
-    background: #fff url(img/invalid.png) no-repeat 100% 15px;
+#slick .field input:focus:invalid,
+#slick .field input.error {
+    background: #fff url(../../img/invalid.png) no-repeat 100% 15px;
     outline: none;
     box-shadow: none;
+}
+
+#slick .field label.error {
+    color: #FF2424;
+    font-size: 11px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    white-space: nowrap;
+    padding: 0;
+    text-align: left;
+    top: -18px;
+    left: 0;
 }
 
 /***** Send button *****/
@@ -1868,7 +1882,8 @@ When adjusting the reset is adviced to check up the elements on your page, as th
 #slick input,
 #slick .terms-window,
 #slick span.slick-tip,
-#slick input ~ span.icon {
+#slick input ~ span.icon,
+#slick label.error {
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;

@@ -1,6 +1,11 @@
 <?php
-
-// configure your app for the production environment
+$conf['db']['db.options'] = array(
+    'driver' => 'pdo_mysql',
+    'host' => 'e98c6e56d5a5fa289ece47d5f735ef95a2c8cc04.rackspaceclouddb.com',
+    'dbname' => 'Meta3DB',
+    'user' => 'admin2',
+    'password' => 'Gjjkingsong3',
+);
 
 $conf['twig']['twig.path'] = [
     ROOT_DIR . '/src/Metamoris/views'

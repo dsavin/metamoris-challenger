@@ -1,5 +1,11 @@
 <?php
-
+$conf['db']['db.options'] = array(
+    'driver' => 'pdo_mysql',
+    'host' => 'localhost',
+    'dbname' => 'Meta3DB',
+    'user' => 'root',
+    'password' => 'pass',
+);
 
 // enable the debug mode
 $conf['twig']['twig.options']['debug'] = true;
