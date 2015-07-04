@@ -77,6 +77,7 @@ class ChallengerController
             $this->registerForm->handleRequest($request);
             if ($this->registerForm->isSubmitted() === true) {
                 $this->register($app);
+                $activeTab = 'login';
             }
         }
 

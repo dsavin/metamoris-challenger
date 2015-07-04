@@ -1,12 +1,21 @@
 <!-- Register input and label -->
 <input id="register" type="radio" class="register-selector" name="slick-forms"
-       checked="checked"/>
+        {% if activeTab == 'register' %} checked="checked" {% endif %}/>
 <label for="register" class="tabs entypo-pencil"></label>
 <!-- Login input and label -->
-<input id="login" type="radio" class="login-selector" name="slick-forms"/>
+<input id="login" type="radio" class="login-selector" name="slick-forms"
+        {% if activeTab == 'login' %} checked="checked" {% endif %}/>
 <label for="login" class="tabs entypo-home"></label>
 <!-- Reset input and label -->
-<input id="reset" type="radio" class="reset-selector" name="slick-forms"/>
+<input id="reset" type="radio" class="reset-selector" name="slick-forms"
+        {% if activeTab == 'reset' %} checked="checked" {% endif %}/>
 <label for="reset" class="tabs entypo-mail"></label>
 <!-- White divider for hiding the shadow -->
 <div class="clrfx merge"></div>
+<div class="flash-message">
+    {% for alert in app.session.flashbag.get('alert') %}
+        <div class="error-message">
+            <div class="alert"><strong>{{ alert }}</strong></div>
+        </div>
+    {% endfor %}
+</div>

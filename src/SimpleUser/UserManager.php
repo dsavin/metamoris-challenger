@@ -135,6 +135,7 @@ class UserManager implements UserProviderInterface
      */
     public function findBy(array $criteria = array(), array $options = array())
     {
+
         // Check the identity map first.
         if (array_key_exists($this->getUserColumns('id'), $criteria)
             && array_key_exists($criteria[$this->getUserColumns('id')],
@@ -163,8 +164,11 @@ class UserManager implements UserProviderInterface
 
         $users = array();
         foreach ($data as $userData) {
-            if (array_key_exists($userData[$this->getUserColumns('id')],
-                $this->identityMap)) {
+            if (array_key_exists(
+                $userData[$this->getUserColumns('id')],
+                $this->identityMap
+            )
+            ) {
                 $user = $this->identityMap[$userData[$this->getUserColumns('id')]];
             } else {
                 $userData['customFields'] = $this->getUserCustomFields($userData[$this->getUserColumns('id')]);
@@ -198,8 +202,8 @@ class UserManager implements UserProviderInterface
         }, $userColumns);
 
         //Merge the existing column names
-        $this->userColumns = array_merge($this->userColumns,
-            $escapedUserColumns);
+        //$this->userColumns = array_merge($this->userColumns,
+        //    $escapedUserColumns);
     }
 
     /**
@@ -782,11 +786,11 @@ class UserManager implements UserProviderInterface
      */
     public function loginAsUser(User $user)
     {
-        if (null !== ($current_token = $this->app['security']->getToken())) {
+        if (null !== ($current_token = $this->app['security.token_storage']->getToken())) {
             $providerKey = method_exists($current_token,
                 'getProviderKey') ? $current_token->getProviderKey() : $current_token->getKey();
             $token = new UsernamePasswordToken($user, null, $providerKey);
-            $this->app['security']->setToken($token);
+            $this->app['security.token_storage']->setToken($token);
 
             $this->app['user'] = $user;
         }

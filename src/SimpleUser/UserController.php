@@ -158,7 +158,8 @@ class UserController
             $app['session']->getFlashBag()->set('alert',
                 'Sorry, your email confirmation link has expired.');
 
-            return $app->redirect($app['url_generator']->generate('user.login'));
+            return $app->redirect($app['url_generator']->generate
+            ('challenger.home'));
         }
 
         $user->setConfirmationToken(null);

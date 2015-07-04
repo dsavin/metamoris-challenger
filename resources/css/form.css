@@ -2290,3 +2290,12 @@ a.go-back span {
         width: 100%;
     }
 }
+
+/* Custom */
+.flash-message {
+    position: absolute;
+    top: 57px;
+    left: 10px;
+    z-index: 1000;
+    color: #FF2424;
+}
