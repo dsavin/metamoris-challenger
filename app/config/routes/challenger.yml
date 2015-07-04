@@ -2,3 +2,8 @@ challenger.home:
   path:     /
   defaults:
     _controller: 'Metamoris\Controllers\ChallengerController::homeAction'
+
+challenger.check-email:
+  path:     /check-email
+  defaults:
+    _controller: 'Metamoris\Controllers\ChallengerController::checkEmailAction'

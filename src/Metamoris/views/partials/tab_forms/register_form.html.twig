@@ -6,30 +6,28 @@
     <p class="intro"><b>Welcome to Metamoris.</b> To register an account you can
         use our form below. </p>
     <!-- Form fields -->
-    <form action="/" name="register" id="register-form" method="post">
+    <form action="{{ app.request_stack.getMasterRequest.getRequestUri }}"
+          name="register" id="register-form" method="post">
         <!-- Email input -->
-        <div>
-
-            <div class="field">
-                <input name="email" placeholder="Email" type="email" id="email"
-                   required/>
+        <div class="field">
+            {{ form_widget(registerForm.email) }}
             <span class="entypo-mail icon"></span>
             <span class="slick-tip left">Enter your email</span>
-        </div>
+            {{ form_errors(registerForm.email) }}
         </div>
         <!-- Password input -->
         <div class="field">
-            <input name="password" placeholder="Password" type="password"
-                   id="password" required/>
+            {{ form_row(registerForm.password.first) }}
             <span class="entypo-lock icon"></span>
             <span class="slick-tip left">Enter your password</span>
+            {{ form_errors(registerForm.password.first) }}
         </div>
         <!-- Password repeat input -->
         <div class="field">
-            <input name="password-repeat" placeholder="Password repeat"
-                   type="password" id="password-repeat" required/>
+            {{ form_row(registerForm.password.second) }}
             <span class="entypo-lock icon"></span>
             <span class="slick-tip left">Repeat your password</span>
+            {{ form_errors(registerForm.password.second) }}
         </div>
         <div class="clrfx mt-20 mb-30 bt"><span class="inner-title">Quick options</span>
         </div>
@@ -41,14 +39,15 @@
 
             <div class="slide-chk w-20">
                 <input type="checkbox" id="newsletter-signup"
-                       name="newsletter-signup"/>
+                       name="register_form[newsletter]"/>
                 <label for="newsletter-signup"></label>
             </div>
         </div>
         <div class="clrfx mt-10 mb-30 bt"></div>
         <!-- Terms agree button -->
         <div class="w-47 mr-5 mt-5">
-            <input type="checkbox" id="terms-agree" name="terms-agree"
+            <input type="checkbox" id="terms-agree"
+                   name="register_form[terms-agree]"
                    checked="checked"/>
             <label for="terms-agree" class="tick"><span>I agree with <a
                             href="#terms-popup">Terms &amp;

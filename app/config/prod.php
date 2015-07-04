@@ -28,6 +28,26 @@ $conf['monolog']['monolog.logfile'] = ROOT_DIR . '/var/logs/prod.log';
 
 $conf['assets_url'] = '/challenger/web/assets/';
 
+$conf['user']['user.options'] = [
+    'emailConfirmation' =>
+        [
+            'required' => true,
+            'template' => 'email/confirm-email.twig'
+        ],
+    'mailer' => [
+        'fromEmail' => [
+            'address' => 'info@metamoris.com',
+            'name' => 'Metamoris',
+        ],
+    ],
+];
+
+$conf['swiftmailer'] = [
+    'swiftmailer.transport' => new \Swift_MailTransport(),
+    'swiftmailer.use_spool' => false,
+    'swiftmailer.logging' => true,
+];
+
 if (APPLICATION_ENV === 'dev') {
     require_once ROOT_DIR . '/app/config/dev.php';
 }

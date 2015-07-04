@@ -22,8 +22,40 @@ $app->register(new Provider\ServiceControllerServiceProvider());
 $app->register(new Provider\HttpFragmentServiceProvider());
 $app->register(new Provider\TwigServiceProvider(), $conf['twig']);
 $app->register(new Provider\DoctrineServiceProvider(), $conf['db']);
-$app->register(new Provider\SwiftmailerServiceProvider());
 $app->register(new Provider\FormServiceProvider());
+$app->register(new Provider\LocaleServiceProvider());
+$app->register(new Silex\Provider\TranslationServiceProvider(), [
+    'locale_fallbacks' => array('en')
+]);
+$app->register(new Provider\SecurityServiceProvider());
+$app->register(new Provider\RememberMeServiceProvider());
+$app->register(new Provider\SessionServiceProvider());
+$app->register(new Provider\SwiftmailerServiceProvider(), $conf['swiftmailer']);
+
+$app['security.firewalls'] = array(
+    /* // Ensure that the login page is accessible to all, if you set anonymous => false below.
+    'login' => array(
+        'pattern' => '^/user/login$',
+    ), */
+    'secured_area' => array(
+        'pattern' => '^challenger/registration/.*$',
+        'anonymous' => true,
+        'remember_me' => array(),
+        'form' => array(
+            'login_path' => '/user/login',
+            'check_path' => '/user/login_check',
+        ),
+        'logout' => array(
+            'logout_path' => '/user/logout'
+        ),
+        'users' => function ($app) {
+            return $app['user.manager'];
+        },
+    ),
+);
+
+$simpleUserProvider = new SimpleUser\UserServiceProvider();
+$app->register($simpleUserProvider, $conf['user']);
 
 if (APPLICATION_ENV === 'dev') {
     Debug::enable();
@@ -37,6 +69,8 @@ if (APPLICATION_ENV === 'dev') {
     $app->register(new Provider\MonologServiceProvider(), $conf['monolog']);
 
 }
+$app->mount('/challenger', $simpleUserProvider->connect($app));
+
 
 $app['conf'] = $conf;
 
@@ -77,6 +111,7 @@ if ($app['assetic.options']['auto_dump_assets']) {
     }
     $dumper->dumpAssets();
 }
-
+//$app['user.manager'] = new \SimpleUser\UserManager($app['db'], $app);
+//$app['user.mailer'] = new \SimpleUser\Mailer($app['mailer'])
 
 return $app;

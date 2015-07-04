@@ -19,5 +19,32 @@ $console
         // do something
     })
 ;
-
+$console
+    ->register('assetic:dump')
+    ->setDescription('Dumps all assets to the filesystem')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use (
+        $app
+    ) {
+        $dumper = $app['assetic.dumper'];
+        if (isset($app['twig'])) {
+            $dumper->addTwigAssets();
+        }
+        $dumper->dumpAssets();
+        $output->writeln('<info>Dump finished</info>');
+    });
+if (isset($app['cache.path'])) {
+    $console
+        ->register('cache:clear')
+        ->setDescription('Clears the cache')
+        ->setCode(function (InputInterface $input, OutputInterface $output) use
+        (
+            $app
+        ) {
+            $cacheDir = $app['cache.path'];
+            $finder = Finder::create()->in($cacheDir)->notName('.gitkeep');
+            $filesystem = new Filesystem();
+            $filesystem->remove($finder);
+            $output->writeln(sprintf("%s <info>success</info>", 'cache:clear'));
+        });
+}
 return $console;

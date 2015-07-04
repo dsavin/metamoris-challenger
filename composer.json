@@ -12,6 +12,7 @@
         "symfony/config": "~2.6",
         "symfony/console": "~2.6",
         "symfony/css-selector": "~2.6",
+      "doctrine/dbal": "~2.4",
         "symfony/debug": "~2.6",
         "symfony/finder": "~2.6",
         "symfony/form": "~2.6",
@@ -24,8 +25,8 @@
         "symfony/yaml":"v2.7.0",
         "mheap/silex-assetic": "*",
         "mrclay/minify": "*",
-      "tubalmartin/cssmin": "*",
-      "symfony/security-csrf": "^2.7"
+      "symfony/security-csrf": "^2.7",
+      "swiftmailer/swiftmailer": "^5.4"
     },
     "autoload": {
         "psr-0": { "": "src/" }
