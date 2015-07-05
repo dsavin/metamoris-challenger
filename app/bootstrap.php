@@ -18,6 +18,7 @@ $app = new Application();
 
 
 # Providers
+$app->register(new Provider\SecurityServiceProvider());
 $app->register(new Provider\RoutingServiceProvider());
 $app->register(new Provider\ValidatorServiceProvider());
 $app->register(new Provider\ServiceControllerServiceProvider());
@@ -29,10 +30,15 @@ $app->register(new Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), [
     'locale_fallbacks' => array('en')
 ]);
-$app->register(new Provider\SecurityServiceProvider());
+
 $app->register(new Provider\RememberMeServiceProvider());
 $app->register(new Provider\SessionServiceProvider());
 $app->register(new Provider\SwiftmailerServiceProvider(), $conf['swiftmailer']);
+
+
+$simpleUserProvider = new SimpleUser\UserServiceProvider();
+$app->register($simpleUserProvider, $conf['user']);
+
 
 $app['security.firewalls'] = array(
     /* // Ensure that the login page is accessible to all, if you set anonymous => false below.
@@ -40,24 +46,21 @@ $app['security.firewalls'] = array(
         'pattern' => '^/user/login$',
     ), */
     'secured_area' => array(
-        'pattern' => '^challenger/registration/.*$',
-        'anonymous' => true,
+        'anonymous' => false,
+        'pattern' => '^/challenger/registration',
         'remember_me' => array(),
         'form' => array(
-            'login_path' => '/user/login',
-            'check_path' => '/user/login_check',
+            'login_path' => '/challenger/login',
+            'check_path' => '/challenger/registration/login_check',
         ),
         'logout' => array(
-            'logout_path' => '/user/logout'
+            'logout_path' => '/challenger/logout',
         ),
         'users' => function ($app) {
             return $app['user.manager'];
         },
     ),
 );
-
-$simpleUserProvider = new SimpleUser\UserServiceProvider();
-$app->register($simpleUserProvider, $conf['user']);
 
 if (APPLICATION_ENV === 'dev') {
     Debug::enable();

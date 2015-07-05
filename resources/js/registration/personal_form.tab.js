@@ -1,8 +1,8 @@
 $().ready(function () {
 
-    console.log('SignUp form valiudation init');
+    console.log('Personal form validation init');
     // validate signup form on keyup and submit
-    $("#register-form").validate({
+    $("#personal-data-form").validate({
         rules: {
             'register_form[email]': {
                 required: true,

@@ -30,3 +30,8 @@ challenger.registration:
   path:     /registration
   defaults:
     _controller: 'Metamoris\Controllers\ChallengerController::registrationAction'
+
+challenger.registration.payment:
+  path:     /registration/payment
+  defaults:
+    _controller: 'Metamoris\Controllers\ChallengerController::paymentAction'

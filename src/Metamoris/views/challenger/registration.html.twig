@@ -117,7 +117,9 @@
                 </div>
                 <!--/ .row-->
 
-                <form action="/" role="form">
+                <form name="personal-info" method="post"
+                      action="{{ path('challenger.registration') }}" role="form"
+                      id="personal-data-form">
 
                     <div class="form-metamoris">
 
@@ -132,7 +134,8 @@
                                             <label for="first-name">First
                                                 Name</label>
                                             <input type="text" id="first-name"
-                                                   placeholder="Name" required/>
+                                                   placeholder="Name"
+                                                   name="first_name" required/>
                                             <span class="entypo-user icon"></span>
                                         </fieldset>
                                         <!--/ .input-first-name-->
@@ -144,6 +147,7 @@
                                                 Name</label>
                                             <input type="text" id="last-name"
                                                    placeholder="Surname"
+                                                   name="last_name"
                                                    required/>
                                             <span class="entypo-user icon"></span>
                                         </fieldset>
@@ -158,9 +162,8 @@
 
                                         <div class="input-block">
                                             <label>Gender</label>
-
                                             <div class="dropdown">
-                                                <select name="salut"
+                                                <select name="gender"
                                                         class="dropdown-select">
                                                     <option value="" disabled
                                                             selected>Select
@@ -183,7 +186,6 @@
 
                                             <fieldset class="input-block">
                                                 <label>Date of Birth</label>
-
                                                 <div class="dropdown">
                                                     <select name="dob_month"
                                                             class="dropdown-select">
@@ -229,6 +231,7 @@
                                                     </select>
                                                 </div>
                                                 <!--/ .dropdown-->
+                                            </fieldset>
                                         </div>
                                         <div class=""
                                              style="float:left; margin-right: 10px;">
@@ -312,7 +315,6 @@
 
                                             <fieldset class="input-block">
                                                 <label></label>
-
                                                 <div class="dropdown">
                                                     <select name="dob_year"
                                                             class="dropdown-select">
@@ -576,7 +578,8 @@
                                     <div class="col-md-12 col-sm-12">
                                         <fieldset class="input-block">
                                             <label for="team">Team</label>
-                                            <input type="text" id="email"
+                                            <input type="text"
+                                                   name="team"
                                                    class=""
                                                    placeholder="Please enter your team name or affiliation"
                                                    required/>
@@ -599,6 +602,7 @@
                                                        class=""
                                                        placeholder="999"
                                                        maxlength="3" required
+                                                       name="phone[0]"
                                                        style="padding: 12px 15px 10px 50px;"/>
                                                 <span class="entypo-phone icon"></span>
                                         </div>
@@ -610,6 +614,7 @@
                                                        class=""
                                                        placeholder="999"
                                                        required
+                                                       name="phone[1]"
                                                        style="padding: 12px 10px 10px 10px;"
                                                        maxlength="3"/>
                                         </div>
@@ -619,6 +624,7 @@
                                             <fieldset class="input-block">
                                                 <input type="text" id="phone"
                                                        class=""
+                                                       name="phone[2]"
                                                        placeholder="999"
                                                        required
                                                        style="padding: 12px 10px 10px 10px;"
@@ -635,6 +641,7 @@
                                                 address</label>
                                             <input type="text" id="address"
                                                    placeholder="Address"
+                                                   name="address"
                                                    required/>
                                             <span class="entypo-home icon"></span>
                                         </fieldset>
@@ -651,6 +658,7 @@
                                             <label for="zip-code">Zip
                                                 Code</label>
                                             <input type="text" id="zip-code"
+                                                   name="zip_code"
                                                    placeholder="Code" required/>
                                             <span class="entypo-home icon"></span>
                                         </fieldset>
@@ -1337,17 +1345,9 @@
                     </div>
                     <!--/ .form-metamoris-->
 
-                    <div class="prev">
-                        <button class="button button-control" type="button"
-                                onclick="window.location.href='login.html'">
-                            <span>Prev Step <b>Account Information</b></span>
-                        </button>
-                        <div class="button-divider"></div>
-                    </div>
 
                     <div class="next">
-                        <button class="button button-control" type="button"
-                                onclick="window.location.href='03_form_billing.html'">
+                        <button class="button button-control" type="submit">
                             <span>Next Step <b>Payment Information</b></span>
                         </button>
                         <div class="button-divider"></div>

@@ -1,0 +1,506 @@
+{% extends "layout_forms.html.twig" %}
+
+{% block stylesheets %}
+    <!-- Forms stylesheet -->
+    {% stylesheets 'css/form2.css' 'css/grid.css' 'css/fontello.css' 'css/layout.css' filter='cssmin' %}
+    <link href="{{ app.conf.assets_url }}{{ asset_url }}" type="text/css"
+          rel="stylesheet"/>
+    {% endstylesheets %}
+    <!-- / Forms stylesheet -->
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts
+    'js/jquery.validate.js'
+    'js/registration/*' filter="jsmin" %}
+    <script src="{{ app.conf.assets_url }}{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+    <div class="form-container">
+
+        <div id="metamoris_form" class="container substrate">
+            <div class="width_cont">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <span class="head_logo_right"><img
+                                    src="{{ app.conf.assets_url }}images/logo.png"/></span>
+                        <span class="head_logo_left"><img
+                                    src="{{ app.conf.assets_url }}images/logo.png"/></span>
+
+                        <h2 class="form-login-heading">METAMORIS:<span>QUALIFIER REGISTRATION</span>
+                        </h2>
+                    </div>
+
+                </div>
+                <!--/ .row-->
+                <div class="row stage-container">
+
+                    <div class="stage tmm-success col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-lock"></div>
+
+                        <div class="stage-content">
+                            <h3 class="stage-title">Create Account</h3>
+
+                            <div class="stage-info">
+                                Please login with your email and password
+                                credentials
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                    <div class="stage tmm-success col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-user"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Personal Information</h3>
+
+                            <div class="stage-info">
+                                Name, Phone, Home address and team / affiliation
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                    <div class="stage tmm-current col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-payment"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Payment Information</h3>
+
+                            <div class="stage-info">
+                                Select your location, weight class and payment
+                                method
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                    <div class="stage col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-details"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Confirm Your Details</h3>
+
+                            <div class="stage-info">
+                                Review your information before submitting
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                </div>
+                <!--/ .row-->
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="form-header">
+                            <div class="form-title-2 form-icon title-icon-card">
+                                <b>Payment</b> Information
+                            </div>
+                            <div class="steps" style="">
+                                <img src="{{ app.conf.assets_url }}images/secure_server@2.png"/>
+                            </div>
+                        </div>
+                        <!--/ .form-header-->
+
+                    </div>
+
+                </div>
+                <!--/ .row-->
+
+                <form action="/" role="form">
+
+                    <div class="form-metamoris">
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-lg-12">
+                                <div style="padding-top:20px; border-bottom: 1px dotted #a2a2a2;">
+                                    <h2>Qualifier Selection</h2></div>
+                                <span style="font-size:small;"><p>Please select
+                                        the qualifying location and weight class
+                                        below</p></span>
+
+                                <div class="row">
+
+                                    <div class="col-md-6 cityselect">
+                                        <fieldset class="input-block">
+                                            <label>Select your city:</label>
+
+                                            <div class="dropdown">
+                                                <select name="location"
+                                                        class="dropdown-select">
+                                                    <option value="" disabled
+                                                            selected>Select a
+                                                        city
+                                                    </option>
+                                                    <option value="Atlanta, GA">
+                                                        1 - Atlanta, GA
+                                                    </option>
+                                                    <option value="Boston, MA">2
+                                                        - Boston, MA
+                                                    </option>
+                                                    <option value="Charlotte, NC">
+                                                        3 - Charlotte, NC
+                                                    </option>
+                                                    <option value="Chicago, IL">
+                                                        4 - Chicago, IL
+                                                    </option>
+                                                    <option value="Dallas, TX">5
+                                                        - Dallas, TX
+                                                    </option>
+                                                    <option value="Denver, CO">6
+                                                        - Denver, CO
+                                                    </option>
+                                                    <option value="Houston, TX">
+                                                        7 - Houston, TX
+                                                    </option>
+                                                    <option value="Las Vegas, NV">
+                                                        8 - Las Vegas, NV
+                                                    </option>
+                                                    <option value="Los Angeles, CA">
+                                                        9 - Los Angeles, CA
+                                                    </option>
+                                                    <option value="Miami, FL">10
+                                                        - Miami, FL
+                                                    </option>
+                                                    <option value="Minneapolis, MN">
+                                                        11 - Minneapolis, MN
+                                                    </option>
+                                                    <option value="New York, NY">
+                                                        12 - New York, NY
+                                                    </option>
+                                                    <option value="Atlanta, GA">
+                                                        13 - Atlanta, GA
+                                                    </option>
+                                                    <option value="Boston, MA">
+                                                        14 - Boston, MA
+                                                    </option>
+                                                    <option value="Charlotte, NC">
+                                                        15 - Charlotte, NC
+                                                    </option>
+                                                    <option value="Chicago, IL">
+                                                        16 - Chicago, IL
+                                                    </option>
+                                                    <option value="Dallas, TX">
+                                                        17 - Dallas, TX
+                                                    </option>
+                                                    <option value="Denver, CO">
+                                                        18 - Denver, CO
+                                                    </option>
+                                                    <option value="Houston, TX">
+                                                        19 - Houston, TX
+                                                    </option>
+                                                    <option value="Las Vegas, NV">
+                                                        20 - Las Vegas, NV
+                                                    </option>
+                                                    <option value="Los Angeles, CA">
+                                                        21 - Los Angeles, CA
+                                                    </option>
+                                                    <option value="Miami, FL">22
+                                                        - Miami, FL
+                                                    </option>
+                                                    <option value="Minneapolis, MN">
+                                                        23 - Minneapolis, MN
+                                                    </option>
+                                                    <option value="New York, NY">
+                                                        24 - New York, NY
+                                                    </option>
+
+                                                </select>
+                                            </div>
+                                            <!--/ .input-dropdown-->
+                                        </fieldset>
+                                        <!--/ .input-card-type-->
+                                    </div>
+
+
+                                    <div class="col-md-6 weightselect">
+                                        <fieldset class="input-block">
+                                            <label>Select weight class:</label>
+
+                                            <div class="dropdown">
+                                                <select name="weight-class"
+                                                        class="dropdown-select">
+                                                    <option value="" disabled
+                                                            selected>Select a
+                                                        weight class
+                                                    </option>
+                                                    <option value="Lightweight">
+                                                        01 - Lightweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        0-135lbs
+                                                    </option>
+                                                    <option value="Welterweight">
+                                                        02 - Welterweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;136-155lbs
+                                                    </option>
+                                                    <option value="Middleweight">
+                                                        03 - Middleweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;156-175lbs
+                                                    </option>
+                                                    <option value="Light Heavyweight">
+                                                        04 - Light Heavyweight
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;176-195lbs
+                                                    </option>
+                                                    <option value="Heavyweight">
+                                                        05 - Heavyweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;196-225lbs
+                                                    </option>
+                                                    <option value="Super Heavyweight">
+                                                        06 - Super Heavyweight
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+225lbs
+                                                    </option>
+                                                    <option value="" disabled>
+                                                        ----------------------------------
+                                                    </option>
+                                                    <option value="Super Heavyweight">
+                                                        08 - Female absolute
+                                                        only
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <!--/ .input-dropdown-->
+                                        </fieldset>
+                                        <!--/ .input-card-type-->
+                                    </div>
+
+
+                                </div>
+                                <!--/ .row-->
+
+
+                                <div class="pm"
+                                     style="padding-top: 10px; padding-bottom: 0px; border-bottom: 1px dotted #a2a2a2;">
+                                    <h2>Payment Method</h2></div>
+                                <br/>
+
+                                <div class="row">
+
+
+                                    <div class="cc"
+                                         style="padding-left:15px; display: block;">
+                                        <form>
+                                            <div style="float:left"
+                                                 class="col-md-6"><label><input
+                                                            class="ccbtn"
+                                                            type="radio"
+                                                            name="ccmethod"
+                                                            value="ccmethod"
+                                                            checked><img
+                                                            width="195"
+                                                            height="30"
+                                                            src="{{ app.conf.assets_url }}images/credit_cards@2.png"/>
+                                                </label></div>
+                                            <div style="float:left"
+                                                 class="col-md-6"><label><input
+                                                            class="ccbtn2"
+                                                            type="radio"
+                                                            name="ccmethod"
+                                                            value="ccmethod"><img
+                                                            width="94"
+                                                            height="30"
+                                                            src="{{ app.conf.assets_url }}images/paypal@2.png"/></label>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <!--/ .row-->
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <fieldset class="input-block">
+                                            <label>Card Type</label>
+
+                                            <div class="dropdown">
+                                                <select name="card-type"
+                                                        class="dropdown-select">
+                                                    <option value="none"
+                                                            disabled selected>
+                                                        Select a card
+                                                    </option>
+                                                    <option value="1">Visa
+                                                    </option>
+                                                    <option value="2">Master
+                                                        Card
+                                                    </option>
+                                                    <option value="2">AMEX
+                                                    </option>
+                                                    <option value="2">DISCOVER
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <!--/ .input-dropdown-->
+                                        </fieldset>
+                                        <!--/ .input-card-type-->
+                                    </div>
+
+
+                                </div>
+                                <!--/ .row-->
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12"
+                                         style="position: inherit;">
+                                        <fieldset class="input-block">
+                                            <label for="card-holder">Card Holder
+                                                Name</label>
+                                            <input type="text" id="card-holder"
+                                                   class=""
+                                                   placeholder="e.g. John Smith"
+                                                   required/>
+                                            <span class="entypo-user icon"></span>
+                                        </fieldset>
+                                        <!--/ .input-holder-->
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <fieldset class="input-block" style="">
+                                            <label for="card-number">Card
+                                                Number</label>
+                                            <input type="text" id="card-number"
+                                                   placeholder="Credit Card number"
+                                                   maxlength="16" required/>
+                                            <span class="entypo-credit-card icon"></span>
+                                        </fieldset>
+                                        <!--/ .input-cardnumber-->
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+
+                                        <fieldset class="input-block">
+                                            <label>Exp Month</label>
+
+                                            <div class="dropdown">
+                                                <select name="month"
+                                                        class="dropdown-select">
+                                                    <option value="none"
+                                                            disabled selected>
+                                                        Month
+                                                    </option>
+                                                    <option value="1">01
+                                                    </option>
+                                                    <option value="2">02
+                                                    </option>
+                                                    <option value="3">03
+                                                    </option>
+                                                    <option value="4">04
+                                                    </option>
+                                                    <option value="5">05
+                                                    </option>
+                                                    <option value="6">06
+                                                    </option>
+                                                    <option value="7">07
+                                                    </option>
+                                                    <option value="8">08
+                                                    </option>
+                                                    <option value="9">09
+                                                    </option>
+                                                    <option value="10">10
+                                                    </option>
+                                                    <option value="11">11
+                                                    </option>
+                                                    <option value="12">12
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <!--/ .dropdown-->
+                                        </fieldset>
+                                        <!--/ .input-month-->
+
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-3">
+
+                                        <fieldset class="input-block">
+                                            <label>Exp Year</label>
+
+                                            <div class="dropdown">
+                                                <select name="year"
+                                                        class="dropdown-select">
+                                                    <option value="none"
+                                                            disabled selected>
+                                                        Year
+                                                    </option>
+                                                    <option value="2">2015
+                                                    </option>
+                                                    <option value="3">2016
+                                                    </option>
+                                                    <option value="4">2018
+                                                    </option>
+                                                    <option value="4">2019
+                                                    </option>
+                                                    <option value="4">2020
+                                                    </option>
+                                                    <option value="4">2021
+                                                    </option>
+                                                    <option value="4">2022
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <!--/ .dropdown-->
+                                        </fieldset>
+                                        <!--/ .input-year-->
+
+                                    </div>
+
+
+                                </div>
+                                <!--/ .row-->
+
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4" style="">
+                                        <fieldset class="input-block">
+                                            <label for="card-cid">CID</label>
+                                            <input type="text" id="card-cid"
+                                                   placeholder="e.g. 366"
+                                                   maxlength="3" pattern="[0-9]"
+                                                   required/>
+                                            <span class="entypo-credit-card icon"></span>
+                                        </fieldset>
+                                        <!--/ .input-cvc-->
+                                    </div>
+
+                                    <div id="TotalCost"><h2>Total cost:<span
+                                                    class="TotalCostTotal"> $125.00</span>
+                                        </h2></div>
+                                </div>
+                                <!--/ .row-->
+
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+                    </div>
+                    <!--/ .form-metamoris-->
+
+                    <div class="prev">
+                        <button class="button button-control" type="button"
+                                onclick="window.location.href='02_form_personal.html'">
+                            <span>Prev Step <b>Personal Information</b></span>
+                        </button>
+                        <div class="button-divider"></div>
+                    </div>
+
+
+                    <div class="next">
+                        <button class="button button-control" type="button"
+                                onclick="window.location.href='04_form_confirm.html'">
+                            <span>Next Step <b>Confirm Your Details</b></span>
+                        </button>
+                        <div class="button-divider"></div>
+                    </div>
+
+                </form>
+                <!--/ .form-metamoris-->
+
+            </div>
+            <!--/ .container-->
+
+        </div>
+        <!--/ .form-container-->
+
+    </div>
+    <!--/ #content-->
+    {% endblock %}

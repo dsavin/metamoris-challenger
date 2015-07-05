@@ -31,7 +31,7 @@ class ChallengerController
         $activeTab
     )
     {
-
+        $authException = $app['user.last_auth_exception']($request);
         $activeTab = ($activeTab) ?: 'register';
         $this->registerForm = $app['form.factory']
             ->createNamedBuilder('register_form', 'form')
@@ -92,6 +92,7 @@ class ChallengerController
         return $app['twig']->render(
             'challenger/tab_forms.html.twig',
             [
+                'error' => $authException ? $authException->getMessageKey() : null,
                 'registerForm' => $this->registerForm->createView(),
                 'activeTab' => $activeTab
             ]
@@ -138,8 +139,25 @@ class ChallengerController
 
     public function registrationAction(Request $request, Application $app)
     {
+        var_dump($request->request->all());
+
+        var_dump($app['user']);
+
+        if (!$app['user']) {
+            return $app->redirect($app['url_generator']->generate('challenger.tabs.login'));
+        }
+
         return $app['twig']->render(
             'challenger/registration.html.twig',
+            [
+            ]
+        );
+    }
+
+    public function paymentAction(Request $request, Application $app)
+    {
+        return $app['twig']->render(
+            'challenger/payment.html.twig',
             [
             ]
         );
