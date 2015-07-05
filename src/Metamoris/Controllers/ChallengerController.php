@@ -20,12 +20,19 @@ class ChallengerController
 
     public function homeAction(Request $request, Application $app)
     {
-        return $this->tabFormsAction($request, $app);
+        return $app['twig']->render(
+            'challenger/landing_page.html.twig'
+        );
     }
 
-    public function tabFormsAction(Request $request, Application $app)
+    public function tabFormsAction(
+        Request $request,
+        Application $app,
+        $activeTab
+    )
     {
-        $activeTab = 'register';
+
+        $activeTab = ($activeTab) ?: 'register';
         $this->registerForm = $app['form.factory']
             ->createNamedBuilder('register_form', 'form')
             ->add(

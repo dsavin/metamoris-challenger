@@ -11,6 +11,8 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Debug\Debug;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 $app = new Application();
 
@@ -113,5 +115,21 @@ if ($app['assetic.options']['auto_dump_assets']) {
 }
 //$app['user.manager'] = new \SimpleUser\UserManager($app['db'], $app);
 //$app['user.mailer'] = new \SimpleUser\Mailer($app['mailer'])
+$app->error(function (\Exception $e, Request $request, $code) use ($app) {
+    if ($app['debug']) {
+        return;
+    }
+
+    // 404.html, or 40x.html, or 4xx.html, or error.html
+    $templates = array(
+        'Metamoris/views/errors/' . $code . '.html.twig',
+        'Metamoris/views/errors/' . substr($code, 0, 2) . 'x.html.twig',
+        'Metamoris/views/errors/' . substr($code, 0, 1) . 'xx.html.twig',
+        'Metamoris/views/errors/default.html.twig',
+    );
+
+    return new Response($app['twig']->resolveTemplate($templates)->render(array('code' => $code)),
+        $code);
+});
 
 return $app;
