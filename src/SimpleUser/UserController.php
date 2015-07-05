@@ -263,9 +263,12 @@ class UserController
 
         $error = null;
 
+
         if ($request->isMethod('POST')) {
             $email = $request->request->get('email');
             $user = $this->userManager->findOneBy(array('email' => $email));
+
+            //var_dump($user); exit();
             if ($user) {
                 // Initialize and send the password reset request.
                 $user->setTimePasswordResetRequested(time());

@@ -2,7 +2,7 @@ $().ready(function () {
 
     console.log('SignUp form valiudation init');
     // validate signup form on keyup and submit
-    var validator = $("#register-form").validate({
+    $("#register-form").validate({
         rules: {
             'register_form[email]': {
                 required: true,

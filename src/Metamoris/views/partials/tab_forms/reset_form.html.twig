@@ -7,7 +7,8 @@
             worries,</b> simply enter your username or email and we'll send you
         new login details.</p>
     <!-- Form fields -->
-    <form action="" name="reset" id="reset" method="post">
+    <form name="reset" id="reset" method="post"
+          action="{{ path('user.forgot-password') }}">
         <div class="clrfx mt-10 mb-30 bt"><span class="inner-title">Please provide us</span>
         </div>
         <!-- Email input -->
@@ -23,8 +24,8 @@
                 in about 10 minutes.</p>
         </div>
         <!-- Send button -->
-        <input type="submit" value="Reset" class="send" form="reset"
-               name="send"/>
+        <input type="submit" value="Reset" class="send"
+                />
     </form>
     <!-- / Form fields -->
 </div>

@@ -34,6 +34,9 @@ $conf['user']['user.options'] = [
             'required' => true,
             'template' => 'email/confirm-email.twig'
         ],
+    'passwordReset' => [
+        'template' => 'email/reset-password.twig',
+    ],
     'mailer' => [
         'fromEmail' => [
             'address' => 'info@metamoris.com',
