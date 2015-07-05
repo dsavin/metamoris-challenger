@@ -139,14 +139,22 @@ class ChallengerController
 
     public function registrationAction(Request $request, Application $app)
     {
-        var_dump($request->request->all());
-
-        var_dump($app['user']);
-
         if (!$app['user']) {
             return $app->redirect($app['url_generator']->generate('challenger.tabs.login'));
         }
+        if ($app['user']->getCustomField('step') === 'personal') {
+            return $app->redirect($app['url_generator']->generate('challenger.registration.payment'));
+        }
+        $personalData = $request->request->all();
+        if (array_key_exists('step', $personalData) === true) {
+            // form submitted
+            $personalData['phone'] = implode('', $personalData['phone']);
+            $app['user']->setCustomFields($personalData);
+            $app['user.manager']->update($app['user']);
 
+            return $app->redirect($app['url_generator']->generate('challenger.registration.payment'));
+
+        }
         return $app['twig']->render(
             'challenger/registration.html.twig',
             [
