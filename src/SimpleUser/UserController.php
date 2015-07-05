@@ -171,8 +171,7 @@ class UserController
         $app['session']->getFlashBag()->set('alert',
             'Thank you! Your account has been activated.');
 
-        return $app->redirect($app['url_generator']->generate('user.view',
-            array('id' => $user->getId())));
+        return $app->redirect($app['url_generator']->generate('challenger.registration'));
     }
 
     /**

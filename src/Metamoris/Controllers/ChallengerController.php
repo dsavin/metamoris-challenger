@@ -136,6 +136,15 @@ class ChallengerController
         }
     }
 
+    public function registrationAction(Request $request, Application $app)
+    {
+        return $app['twig']->render(
+            'challenger/registration.html.twig',
+            [
+            ]
+        );
+    }
+
     public function checkEmailAction(Request $request, Application $app)
     {
 

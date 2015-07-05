@@ -3,8 +3,8 @@ challenger.home:
   defaults:
     _controller: 'Metamoris\Controllers\ChallengerController::homeAction'
 
-challenger.tabs.register:
-  path:     /register
+challenger.tabs.createaccount:
+  path:     /createaccount
   defaults:
     _controller: 'Metamoris\Controllers\ChallengerController::tabFormsAction'
     activeTab: 'register'
@@ -25,3 +25,8 @@ challenger.check-email:
   path:     /check-email
   defaults:
     _controller: 'Metamoris\Controllers\ChallengerController::checkEmailAction'
+
+challenger.registration:
+  path:     /registration
+  defaults:
+    _controller: 'Metamoris\Controllers\ChallengerController::registrationAction'

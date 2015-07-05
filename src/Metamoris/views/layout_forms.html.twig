@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+<html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if IE 9]>
+<html class="ie9 no-js" lang="en-US">  <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie no-js" lang="en">  <!--<![endif]-->
+<head>
+    <!-- Google Web Fonts
+    ================================================== -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,
+    400,500,700%7cCourgette%7cRaleway:400,700,500%7cCourgette%7cLato:700'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Forms</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+
+<!-- - - - - - - - - - - - - Content - - - - - - - - - - - - -  -->
+{% block content %}{% endblock %}
+<!-- - - - - - - - - - - - end Content - - - - - - - - - - - - - -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<!--[if lt IE 9]>
+{% block javascripts %}{% endblock %}
+<![endif]-->
+</body>
+</html>
