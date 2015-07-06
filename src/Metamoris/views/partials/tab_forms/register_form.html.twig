@@ -1,10 +1,9 @@
 <!-- Register form -->
 <div class="register-form">
     <!-- Title -->
-    <div class="title">Registration</div>
+    <div class="title">Metamoris Challenger Registration</div>
     <!-- Intro text -->
-    <p class="intro"><b>Welcome to Metamoris.</b> To register an account you can
-        use our form below. </p>
+    <p class="intro"><b>North American Challenger 2015;</b> secure your spot now!</p>
     <!-- Form fields -->
     <form action="{{ app.request_stack.getMasterRequest.getRequestUri }}"
           name="register" id="register-form" method="post">
@@ -45,14 +44,6 @@
         </div>
         <div class="clrfx mt-10 mb-30 bt"></div>
         <!-- Terms agree button -->
-        <div class="w-47 mr-5 mt-5">
-            <input type="checkbox" id="terms-agree"
-                   name="register_form[terms-agree]"
-                   checked="checked"/>
-            <label for="terms-agree" class="tick"><span>I agree with <a
-                            href="#terms-popup">Terms &amp;
-                        Conditions</a></span></label>
-        </div>
         <!-- Send button -->
         <input type="submit" value="Register" class="send"/>
 

@@ -131,7 +131,10 @@ class ChallengerController
             );
             $app['user.manager']->insert($user);
             $app['user.mailer']->sendConfirmationMessage($user);
-
+            $app['session']->getFlashBag()->set(
+                'alert',
+                "We've sent you an email, please verify your email then continue"
+            );
         } catch (\InvalidArgumentException $e) {
             //$error = $e->getMessage();
         }
