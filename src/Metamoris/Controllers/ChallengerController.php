@@ -162,22 +162,40 @@ class ChallengerController
 
     public function paymentAction(Request $request, Application $app)
     {
-        $citiesSql = "
-        SELECT c.*
-        FROM challenger_cities c
-        LEFT JOIN  challenger_user_class_city map
-        ON c.id = map.city_id
-        WHERE map.id IS NULL";
-        $cities = $app['db']->fetchAll($citiesSql);
+
+
+
 
         if (!$app['user']) {
             return $app->redirect($app['url_generator']->generate('challenger.tabs.login'));
         }
 
+        $customFields = $app['user']->getCustomFields();
+
+        if (array_key_exists('gender', $customFields)
+            && $customFields['gender'] === 'Female') {
+            $citiesSql = "
+        SELECT c.*
+        FROM challenger_cities c
+        LEFT JOIN  challenger_user_class_city map
+        ON c.id = map.city_id
+        WHERE map.id IS NULL";
+
+        }
+
+            $citiesSql = "
+        SELECT c.*
+        FROM challenger_cities c
+        LEFT JOIN  challenger_user_class_city map
+        ON c.id = map.city_id
+        WHERE map.id IS NULL";
+
+
+        $cities = $app['db']->fetchAll($citiesSql);
         $paymentData = $request->request->all();
         if (array_key_exists('step', $paymentData) === true) {
 
-            $customFields = $app['user']->getCustomFields();
+
 
             $customFields = array_merge($customFields, $paymentData);
             // form submitted
@@ -258,7 +276,7 @@ class ChallengerController
         if (array_key_exists('confirmation_id', $data) === false) {
             if ($data['method'] === 'cc') {
                 $order = new \AuthorizeNetAIM();
-                $order->amount = "125.00";
+                $order->amount = "1.00";
                 $order->card_num = $data['card_number'];
                 $order->exp_date = $data['card_month'] . '/' . $data['card_year'];
 
