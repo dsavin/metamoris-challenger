@@ -2,9 +2,7 @@
 <div class="login-form">
     <!-- Title -->
     <div class="title">User login</div>
-    {% if error %}
-        <div class="alert alert-danger">{{ error|nl2br }}</div>
-    {% endif %}
+
     <!-- Intro text -->
     <p class="intro"><b>Already signed up for the Challenger?</b></p>
     <!-- Form fields -->
@@ -32,11 +30,15 @@
                    checked="checked"/>
             <label for="signed-in"
                    class="tick"><span>Keep me signed in</span></label>
+                   
         </div>
         <!-- Send button -->
-        <input type="submit" value="Login" class="send"
-                />
+        <input type="submit" value="Login" class="send"  />
+
     </form>
     <!-- / Form fields -->
+                    {% if error %}
+                    <div class="alert alert-danger" style="  margin-top: 290px; color: white; background: red;text-align: center;">{{ error|nl2br }}</div>
+                {% endif %}
 </div>
 <!-- / Login form -->
