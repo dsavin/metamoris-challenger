@@ -1186,3 +1186,7 @@ span.rightcontfont h1 {
 		/*	end Tooltip  */
 
 
+#metamoris_form.substrate .input-block label > label.error {
+    padding-left: 10px;
+    color: #f00 !important;
+}

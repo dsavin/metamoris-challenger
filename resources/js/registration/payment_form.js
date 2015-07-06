@@ -5,18 +5,18 @@ $().ready(function () {
         $.post("fetch-weight-classes", {city: this.value})
             .done(function (data) {
 
-                $("#weight-class option").remove();
-                $("#weight-class").get(0).options.add(
+                $("#weight_class option").remove();
+                $("#weight_class").get(0).options.add(
                     new Option('Select a weight class', ''));
-                $($("#weight-class option").get(0)).prop('disabled', true);
+                $($("#weight_class option").get(0)).prop('disabled', true);
                 for (loop = 0; loop < data.length; loop++) {
                     var wClass = data[loop];
                     var text = (loop + 1) + ' - ' + wClass.name + ' ' + wClass.weight;
-                    $("#weight-class").get(0).options.add(
+                    $("#weight_class").get(0).options.add(
                         new Option(text, wClass.id));
                 }
 
-                $("#weight-class").prop('disabled', false);
+                $("#weight_class").prop('disabled', false);
             });
     });
 
@@ -26,7 +26,7 @@ $().ready(function () {
             $( element )
                 .closest( "form" )
                 .find( "label[for='" + element.attr( "id" ) + "']" )
-                .append('&nbsp;<span style="color: #f00;">' +  error + '</span>');
+                .append( error);
         },
         rules: {
 
@@ -36,10 +36,10 @@ $().ready(function () {
             'weight_class': {
                 required: true
             },
-            'card-holder': {
+            'card_holder': {
                 required: true
             },
-            'card-type': {
+            'card_type': {
                 required: true
             },
             'card_number': {

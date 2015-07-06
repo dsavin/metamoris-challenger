@@ -182,7 +182,7 @@ class ChallengerController
         ON map.city_id = c.id
         WHERE weight_class_id = 7
         GROUP BY city_id
-        HAVING COUNT(*) > 16 ORDER BY c.name)";
+        HAVING COUNT(*) > 2 ORDER BY c.name)";
 
         } elseif (array_key_exists('gender', $customFields)
             && $customFields['gender'] === 'Male') {
@@ -195,7 +195,7 @@ class ChallengerController
           ON map.city_id = c.id
           WHERE weight_class_id IN (1,3,4,5,6)
           GROUP BY city_id
-          HAVING COUNT(*) > 80
+          HAVING COUNT(*) > 10
           ORDER BY c.name)";
         } else {
             $citiesSql = "
@@ -206,7 +206,7 @@ class ChallengerController
           LEFT JOIN challenger_cities c
           ON map.city_id = c.id
           GROUP BY city_id
-          HAVING COUNT(*) > 96
+          HAVING COUNT(*) > 12
           ORDER BY c.name)";
         }
 
@@ -386,7 +386,7 @@ class ChallengerController
           LEFT JOIN challenger_weight_classes c
           ON map.weight_class_id = c.id AND map.city_id = ?
           GROUP BY weight_class_id
-          HAVING COUNT(*) > 16
+          HAVING COUNT(*) > 2
           ORDER BY c.name
                 ) AND id != 7";
                 $classes = $app['db']->fetchAll($classesSql, [(int) $city]);

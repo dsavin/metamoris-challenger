@@ -27,7 +27,8 @@
         "mrclay/minify": "*",
       "symfony/security-csrf": "^2.7",
       "swiftmailer/swiftmailer": "^5.4",
-      "authorizenet/authorizenet": "~1.8"
+      "authorizenet/authorizenet": "~1.8",
+        "paypal/rest-api-sdk-php": "*"
     },
     "autoload": {
         "psr-0": { "": "src/" }

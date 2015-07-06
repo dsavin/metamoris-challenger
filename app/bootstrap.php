@@ -52,6 +52,8 @@ $app['security.firewalls'] = array(
         'form' => array(
             'login_path' => '/challenger/login',
             'check_path' => '/challenger/registration/login_check',
+            'default_target_path' => '/challenger/registration',
+            'always_use_default_target_path' => true
         ),
         'logout' => array(
             'logout_path' => '/challenger/logout',
