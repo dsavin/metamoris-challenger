@@ -133,7 +133,7 @@
 
                                     <div class="col-md-6 cityselect">
                                         <fieldset class="input-block">
-                                            <label>Select your city:</label>
+                                            <label for="location">Select your city:</label>
 
                                             <div class="dropdown">
                                                 <select name="location"
@@ -161,7 +161,7 @@
 
                                     <div class="col-md-6 weightselect">
                                         <fieldset class="input-block">
-                                            <label>Select weight class:</label>
+                                            <label for="weight-class">Select weight class:</label>
 
                                             <div class="dropdown">
                                                 <select name="weight_class"
@@ -226,10 +226,10 @@
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6">
                                         <fieldset class="input-block">
-                                            <label>Card Type</label>
+                                            <label for="card-type">Card Type</label>
 
                                             <div class="dropdown">
-                                                <select name="card_type"
+                                                <select id="card-type" name="card_type"
                                                         class="dropdown-select">
                                                     <option value="none"
                                                             disabled selected>
@@ -261,7 +261,7 @@
                                     <div class="col-md-12 col-sm-12"
                                          style="position: inherit;">
                                         <fieldset class="input-block">
-                                            <label for="card_holder">Card Holder
+                                            <label for="card-holder">Card Holder
                                                 Name</label>
                                             <input type="text" id="card-holder"
                                                    class=""
@@ -279,7 +279,7 @@
                                             <input type="text" id="card_number"
                                                    name="card_number"
                                                    placeholder="Credit Card number"
-                                                   max="16" min="16" required/>
+                                                    required/>
                                             <span class="entypo-credit-card icon"></span>
                                         </fieldset>
                                         <!--/ .input-cardnumber-->
@@ -287,10 +287,11 @@
                                     <div class="col-md-3 col-sm-3">
 
                                         <fieldset class="input-block">
-                                            <label>Exp Month</label>
+                                            <label for="card-month">Exp Month</label>
 
                                             <div class="dropdown">
                                                 <select name="card_month"
+                                                        id="card-month"
                                                         class="dropdown-select">
                                                     <option value="none"
                                                             disabled selected>
@@ -331,10 +332,11 @@
                                     <div class="col-md-3 col-sm-3">
 
                                         <fieldset class="input-block">
-                                            <label>Exp Year</label>
+                                            <label for="card-year">Exp Year</label>
 
                                             <div class="dropdown">
                                                 <select name="card_year"
+                                                        id="card-year"
                                                         class="dropdown-select">
                                                     <option value="none"
                                                             disabled selected>
@@ -371,7 +373,7 @@
                                 <div class="row">
                                     <div class="col-md-4 col-sm-4" style="">
                                         <fieldset class="input-block">
-                                            <label for="card_cid">CID</label>
+                                            <label for="card-cid">CID</label>
                                             <input type="text" id="card-cid"
                                                    name="card_cid"
                                                    placeholder="e.g. 366"

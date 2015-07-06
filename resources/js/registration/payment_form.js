@@ -20,17 +20,43 @@ $().ready(function () {
             });
     });
 
-    $("#personal-data-form").validate({
+    $("#payment-form").validate({
+        errorPlacement: function(error, element) {
+            // Append error within linked label
+            $( element )
+                .closest( "form" )
+                .find( "label[for='" + element.attr( "id" ) + "']" )
+                .append('&nbsp;<span style="color: #f00;">' +  error + '</span>');
+        },
         rules: {
 
-            'register_form[password][first]': {
-                required: true,
-                minlength: 5
+            'location': {
+                required: true
             },
-            'register_form[password][second]': {
+            'weight_class': {
+                required: true
+            },
+            'card-holder': {
+                required: true
+            },
+            'card-type': {
+                required: true
+            },
+            'card_number': {
+                creditcard: true,
+                required: true
+            },
+            'card_month': {
+                required: true
+            },
+            'card_year': {
+                required: true
+            },
+            'card-cid': {
                 required: true,
-                minlength: 5,
-                equalTo: "#register_form_password_first"
+                digits: true,
+                min: 3,
+                max: 3
             }
         },
         messages: {
