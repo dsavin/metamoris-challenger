@@ -186,6 +186,12 @@ class ChallengerController
 
             $data = $app['user']->getCustomFields();
 
+            $citiesSql = "
+        SELECT *
+        FROM challenger_cities
+        ";
+
+            $cities = $app['db']->fetchAll($citiesSql);
             foreach ($cities as $city) {
                 if ((int)$city['id'] === (int)$data['location']) {
                     $location = $city;
@@ -223,12 +229,80 @@ class ChallengerController
 
     public function confirmationAction(Request $request, Application $app)
     {
+        $error = null;
+
+        $citiesSql = "
+        SELECT *
+        FROM challenger_cities
+        ";
+
+        $cities = $app['db']->fetchAll($citiesSql);
+
         $data = $app['user']->getCustomFields();
 
-        return $app['twig']->render(
-            'challenger/confirmation.html.twig',
-            [
+        foreach ($cities as $city) {
+            if ((int)$city['id'] === (int)$data['location']) {
+                $location = $city;
+                break;
+            }
+        }
 
+        $classSql = "SELECT * FROM challenger_weight_classes WHERE id = ?";
+
+        $class = $app['db']->fetchAssoc(
+            $classSql,
+            [(int)$data['weight_class']]
+        );
+
+
+        if (array_key_exists('confirmation_id', $data) === false) {
+            if ($data['method'] === 'cc') {
+                $order = new \AuthorizeNetAIM();
+                $order->amount = "125.00";
+                $order->card_num = $data['card_number'];
+                $order->exp_date = $data['card_month'] . '/' . $data['card_year'];
+
+
+                $response = $order->authorizeAndCapture();
+                if ($response->approved) {
+                    $transaction_id = $response->transaction_id;
+                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    $charactersLength = strlen($characters);
+                    $randomString = '';
+                    for ($i = 0; $i < 10; $i++) {
+                        $randomString .= $characters[rand(0,
+                            $charactersLength - 1)];
+                    }
+                    $data['authorizenet_transaction_id'] = $transaction_id;
+                    $data['confirmation_id'] = $randomString;
+                    $app['user']->setCustomFields($data);
+                    $app['user.manager']->update($app['user']);
+
+                    $app['db']->insert(
+                        'challenger_user_class_city',
+                        [
+                            'user_id' => $app['user']->getId(),
+                            'weight_class_id' => (int)$data['weight_class'],
+                            'city_id' => $data['location']
+                        ]
+                    );
+
+                } else {
+                    $error = 'There was an issue during charging of your credit card.
+                    Please provide another credit card data.';
+                }
+            }
+        }
+
+
+        return $app['twig']->render(
+            'challenger/confirmation_result.html.twig',
+            [
+                'error' => ($error) ? $error : null,
+                'data' => $data,
+                'location' => $location,
+                'class' => $class,
+                'user' => $app['user']
             ]
         );
     }

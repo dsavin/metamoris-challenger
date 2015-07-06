@@ -51,6 +51,11 @@ $conf['swiftmailer'] = [
     'swiftmailer.logging' => true,
 ];
 
+
 if (APPLICATION_ENV === 'dev') {
     require_once ROOT_DIR . '/app/config/dev.php';
+} else {
+    define("AUTHORIZENET_API_LOGIN_ID", "3J3cpJ2P4ZH");
+    define("AUTHORIZENET_TRANSACTION_KEY", "4EqJ48vr4d68dY9c");
+    define("AUTHORIZENET_SANDBOX", false);
 }
