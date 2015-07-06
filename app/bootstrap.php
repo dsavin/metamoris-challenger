@@ -73,6 +73,10 @@ if (APPLICATION_ENV === 'dev') {
 
     $app->register(new Provider\MonologServiceProvider(), $conf['monolog']);
 
+} else {
+    $conf['monolog']['monolog.level']  = Monolog\Logger::DEBUG;
+
+    $app->register(new Provider\MonologServiceProvider(), $conf['monolog']);
 }
 $app->mount('/challenger', $simpleUserProvider->connect($app));
 

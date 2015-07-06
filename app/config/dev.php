@@ -26,7 +26,9 @@ $conf['assetic'] = [
 ];
 
 $conf['assets_url'] = '/assets/';
-
+/*
 define("AUTHORIZENET_API_LOGIN_ID", "8Hg44h4NeUFK");
 define("AUTHORIZENET_TRANSACTION_KEY", "88YV7aN32bysA5fW");
 define("AUTHORIZENET_SANDBOX", true);
+
+*/

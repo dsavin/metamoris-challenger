@@ -166,9 +166,6 @@ class ChallengerController
     public function paymentAction(Request $request, Application $app)
     {
 
-
-
-
         if (!$app['user']) {
             return $app->redirect($app['url_generator']->generate('challenger.tabs.login'));
         }
@@ -178,20 +175,40 @@ class ChallengerController
         if (array_key_exists('gender', $customFields)
             && $customFields['gender'] === 'Female') {
             $citiesSql = "
-        SELECT c.*
-        FROM challenger_cities c
-        LEFT JOIN  challenger_user_class_city map
-        ON c.id = map.city_id
-        WHERE map.id IS NULL";
+        SELECT * from challenger_cities
+        WHERE id NOT IN ( SELECT c.id
+        FROM challenger_user_class_city map
+        LEFT JOIN challenger_cities c
+        ON map.city_id = c.id
+        WHERE weight_class_id = 7
+        GROUP BY city_id
+        HAVING COUNT(*) > 16 ORDER BY c.name)";
 
-        }
-
+        } elseif (array_key_exists('gender', $customFields)
+            && $customFields['gender'] === 'Male') {
             $citiesSql = "
-        SELECT c.*
-        FROM challenger_cities c
-        LEFT JOIN  challenger_user_class_city map
-        ON c.id = map.city_id
-        WHERE map.id IS NULL";
+        SELECT * from challenger_cities
+        WHERE id NOT IN (
+          SELECT c.id
+          FROM challenger_user_class_city map
+          LEFT JOIN challenger_cities c
+          ON map.city_id = c.id
+          WHERE weight_class_id IN (1,3,4,5,6)
+          GROUP BY city_id
+          HAVING COUNT(*) > 80
+          ORDER BY c.name)";
+        } else {
+            $citiesSql = "
+        SELECT * from challenger_cities
+        WHERE id NOT IN (
+          SELECT c.id
+          FROM challenger_user_class_city map
+          LEFT JOIN challenger_cities c
+          ON map.city_id = c.id
+          GROUP BY city_id
+          HAVING COUNT(*) > 96
+          ORDER BY c.name)";
+        }
 
 
         $cities = $app['db']->fetchAll($citiesSql);
@@ -351,14 +368,31 @@ class ChallengerController
     ) {
         if ($request->isXmlHttpRequest() === true) {
             $city = $request->request->get('city');
-            $classesSql = "
-            SELECT c.*
-            FROM challenger_weight_classes c
-            LEFT JOIN  challenger_user_class_city map
-            ON c.id = map.weight_class_id AND map.city_id = ?
-            WHERE map.id IS NULL";
+            if ($app['user']->hasCustomField('gender')
+                && $app['user']->getCustomField('gender') == 'Female') {
+                $classesSql = "
+                SELECT *
+                FROM challenger_weight_classes
+                WHERE id = 7";
+                $classes = $app['db']->fetchAll($classesSql);
+            } elseif ($app['user']->hasCustomField('gender')
+                && $app['user']->getCustomField('gender') == 'Male') {
+                $classesSql = "
+                SELECT *
+                FROM challenger_weight_classes
+                WHERE NOT EXISTS (
+                 SELECT c.id
+          FROM challenger_user_class_city map
+          LEFT JOIN challenger_weight_classes c
+          ON map.weight_class_id = c.id AND map.city_id = ?
+          GROUP BY weight_class_id
+          HAVING COUNT(*) > 16
+          ORDER BY c.name
+                ) AND id != 7";
+                $classes = $app['db']->fetchAll($classesSql, [(int) $city]);
+            }
 
-            $classes = $app['db']->fetchAll($classesSql, [(int)$city]);
+            //$classes = $app['db']->fetchAll($classesSql, [(int)$city]);
         } else {
             $classes = null;
         }
