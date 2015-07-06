@@ -12,7 +12,7 @@
 {% block javascripts %}
     {% javascripts
     'js/jquery.validate.js'
-    'js/registration/*' filter="jsmin" %}
+    'js/registration/personal_form.js' filter="jsmin" %}
     <script src="{{ app.conf.assets_url }}{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
@@ -169,9 +169,10 @@
                                                             selected>Select
                                                         gender
                                                     </option>
-                                                    <option value="1">Male
+                                                    <option value="Male">Male
                                                     </option>
-                                                    <option value="2">Female
+                                                    <option value="Female">
+                                                        Female
                                                     </option>
                                                 </select>
                                             </div>
@@ -677,135 +678,140 @@
                                                             selected>Select a
                                                         state
                                                     </option>
-                                                    <option value="1">ALABAMA
+                                                    <option value="AL">Alabama
                                                     </option>
-                                                    <option value="2">ALASKA
+                                                    <option value="AK">Alaska
                                                     </option>
-                                                    <option value="3">ARIZONA
+                                                    <option value="AZ">Arizona
                                                     </option>
-                                                    <option value="4">ARKANSAS
+                                                    <option value="AR">
+                                                        Arkansas
                                                     </option>
-                                                    <option value="5">
-                                                        CALIFORNIA
+                                                    <option value="CA">
+                                                        California
                                                     </option>
-                                                    <option value="6">COLORADO
+                                                    <option value="CO">
+                                                        Colorado
                                                     </option>
-                                                    <option value="7">
-                                                        CONNECTICUT
+                                                    <option value="CT">
+                                                        Connecticut
                                                     </option>
-                                                    <option value="8">DELAWARE
+                                                    <option value="DE">
+                                                        Delaware
                                                     </option>
-                                                    <option value="9">FLORIDA
+                                                    <option value="DC">District
+                                                        Of Columbia
                                                     </option>
-                                                    <option value="10">GEORGIA
+                                                    <option value="FL">Florida
                                                     </option>
-                                                    <option value="11">HAWAII
+                                                    <option value="GA">Georgia
                                                     </option>
-                                                    <option value="12">IDAHO
+                                                    <option value="HI">Hawaii
                                                     </option>
-                                                    <option value="13">
-                                                        ILLINOIS
+                                                    <option value="ID">Idaho
                                                     </option>
-                                                    <option value="14">INDIANA
+                                                    <option value="IL">
+                                                        Illinois
                                                     </option>
-                                                    <option value="15">IOWA
+                                                    <option value="IN">Indiana
                                                     </option>
-                                                    <option value="16">KANSAS
+                                                    <option value="IA">Iowa
                                                     </option>
-                                                    <option value="17">
-                                                        KENTUCKY
+                                                    <option value="KS">Kansas
                                                     </option>
-                                                    <option value="18">
-                                                        LOUISIANA
+                                                    <option value="KY">
+                                                        Kentucky
                                                     </option>
-                                                    <option value="19">MAINE
+                                                    <option value="LA">
+                                                        Louisiana
                                                     </option>
-                                                    <option value="20">
-                                                        MARYLAND
+                                                    <option value="ME">Maine
                                                     </option>
-                                                    <option value="21">
-                                                        MASSACHUSETTS
+                                                    <option value="MD">
+                                                        Maryland
                                                     </option>
-                                                    <option value="22">
-                                                        MICHIGAN
+                                                    <option value="MA">
+                                                        Massachusetts
                                                     </option>
-                                                    <option value="23">
-                                                        MINNESOTA
+                                                    <option value="MI">
+                                                        Michigan
                                                     </option>
-                                                    <option value="24">
-                                                        MISSISSIPPI
+                                                    <option value="MN">
+                                                        Minnesota
                                                     </option>
-                                                    <option value="25">
-                                                        MISSOURI
+                                                    <option value="MS">
+                                                        Mississippi
                                                     </option>
-                                                    <option value="26">MONTANA
+                                                    <option value="MO">
+                                                        Missouri
                                                     </option>
-                                                    <option value="27">
-                                                        NEBRASKA
+                                                    <option value="MT">Montana
                                                     </option>
-                                                    <option value="28">NEVADA
+                                                    <option value="NE">
+                                                        Nebraska
                                                     </option>
-                                                    <option value="29">NEW
-                                                        HAMPSHIRE
+                                                    <option value="NV">Nevada
                                                     </option>
-                                                    <option value="30">NEW
-                                                        JERSEY
+                                                    <option value="NH">New
+                                                        Hampshire
                                                     </option>
-                                                    <option value="31">NEW
-                                                        MEXICO
+                                                    <option value="NJ">New
+                                                        Jersey
                                                     </option>
-                                                    <option value="32">NEW
-                                                        YORK
+                                                    <option value="NM">New
+                                                        Mexico
                                                     </option>
-                                                    <option value="33">NORTH
-                                                        CAROLINA
+                                                    <option value="NY">New
+                                                        York
                                                     </option>
-                                                    <option value="34">NORTH
-                                                        DAKOTA
+                                                    <option value="NC">North
+                                                        Carolina
                                                     </option>
-                                                    <option value="35">OHIO
+                                                    <option value="ND">North
+                                                        Dakota
                                                     </option>
-                                                    <option value="36">
-                                                        OKLAHOMA
+                                                    <option value="OH">Ohio
                                                     </option>
-                                                    <option value="37">OREGON
+                                                    <option value="OK">
+                                                        Oklahoma
                                                     </option>
-                                                    <option value="38">
-                                                        PENNSYLVANIA
+                                                    <option value="OR">Oregon
                                                     </option>
-                                                    <option value="39">RHODE
-                                                        ISLAND
+                                                    <option value="PA">
+                                                        Pennsylvania
                                                     </option>
-                                                    <option value="40">SOUTH
-                                                        CAROLINA
+                                                    <option value="RI">Rhode
+                                                        Island
                                                     </option>
-                                                    <option value="41">SOUTH
-                                                        DAKOTA
+                                                    <option value="SC">South
+                                                        Carolina
                                                     </option>
-                                                    <option value="42">
-                                                        TENNESSEE
+                                                    <option value="SD">South
+                                                        Dakota
                                                     </option>
-                                                    <option value="43">TEXAS
+                                                    <option value="TN">
+                                                        Tennessee
                                                     </option>
-                                                    <option value="44">UTAH
+                                                    <option value="TX">Texas
                                                     </option>
-                                                    <option value="45">VERMONT
+                                                    <option value="UT">Utah
                                                     </option>
-                                                    <option value="46">
-                                                        VIRGINIA
+                                                    <option value="VT">Vermont
                                                     </option>
-                                                    <option value="47">
-                                                        WASHINGTON
+                                                    <option value="VA">
+                                                        Virginia
                                                     </option>
-                                                    <option value="48">WEST
-                                                        VIRGINIA
+                                                    <option value="WA">
+                                                        Washington
                                                     </option>
-                                                    <option value="49">
-                                                        WISCONSIN
+                                                    <option value="WV">West
+                                                        Virginia
                                                     </option>
-                                                    <option value="50">WYOMING
+                                                    <option value="WI">
+                                                        Wisconsin
                                                     </option>
-
+                                                    <option value="WY">Wyoming
+                                                    </option>
                                                 </select>
                                             </div>
                                             <!--/ .dropdown-->

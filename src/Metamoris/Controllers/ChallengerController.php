@@ -142,9 +142,7 @@ class ChallengerController
         if (!$app['user']) {
             return $app->redirect($app['url_generator']->generate('challenger.tabs.login'));
         }
-        if ($app['user']->getCustomField('step') === 'personal') {
-            return $app->redirect($app['url_generator']->generate('challenger.registration.payment'));
-        }
+
         $personalData = $request->request->all();
         if (array_key_exists('step', $personalData) === true) {
             // form submitted
@@ -164,9 +162,73 @@ class ChallengerController
 
     public function paymentAction(Request $request, Application $app)
     {
+        $citiesSql = "
+        SELECT c.*
+        FROM challenger_cities c
+        LEFT JOIN  challenger_user_class_city map
+        ON c.id = map.city_id
+        WHERE map.id IS NULL";
+        $cities = $app['db']->fetchAll($citiesSql);
+
+        if (!$app['user']) {
+            return $app->redirect($app['url_generator']->generate('challenger.tabs.login'));
+        }
+
+        $paymentData = $request->request->all();
+        if (array_key_exists('step', $paymentData) === true) {
+
+            $customFields = $app['user']->getCustomFields();
+
+            $customFields = array_merge($customFields, $paymentData);
+            // form submitted
+            $app['user']->setCustomFields($customFields);
+            $app['user.manager']->update($app['user']);
+
+            $data = $app['user']->getCustomFields();
+
+            foreach ($cities as $city) {
+                if ((int)$city['id'] === (int)$data['location']) {
+                    $location = $city;
+                    break;
+                }
+            }
+
+            $classSql = "SELECT * FROM challenger_weight_classes WHERE id = ?";
+
+            $class = $app['db']->fetchAssoc($classSql,
+                [(int)$data['weight_class']]);
+
+
+            return $app['twig']->render(
+                'challenger/confirmation.html.twig',
+                [
+                    'data' => $data,
+                    'location' => $location,
+                    'class' => $class,
+                    'user' => $app['user']
+
+                ]
+            );
+
+
+        }
+
         return $app['twig']->render(
             'challenger/payment.html.twig',
             [
+                'cities' => $cities
+            ]
+        );
+    }
+
+    public function confirmationAction(Request $request, Application $app)
+    {
+        $data = $app['user']->getCustomFields();
+
+        return $app['twig']->render(
+            'challenger/confirmation.html.twig',
+            [
+
             ]
         );
     }
@@ -188,4 +250,24 @@ class ChallengerController
         return new JsonResponse(false);
     }
 
+    public function fetchWeightClassesAction(
+        Request $request,
+        Application $app
+    ) {
+        if ($request->isXmlHttpRequest() === true) {
+            $city = $request->request->get('city');
+            $classesSql = "
+            SELECT c.*
+            FROM challenger_weight_classes c
+            LEFT JOIN  challenger_user_class_city map
+            ON c.id = map.weight_class_id AND map.city_id = ?
+            WHERE map.id IS NULL";
+
+            $classes = $app['db']->fetchAll($classesSql, [(int)$city]);
+        } else {
+            $classes = null;
+        }
+
+        return new JsonResponse($classes);
+    }
 }

@@ -35,3 +35,14 @@ challenger.registration.payment:
   path:     /registration/payment
   defaults:
     _controller: 'Metamoris\Controllers\ChallengerController::paymentAction'
+
+challenger.registration.confirmation:
+  path:     /registration/confirmation
+  defaults:
+    _controller: 'Metamoris\Controllers\ChallengerController::confirmationAction'
+
+
+challenger.registration.weight_classes:
+  path:     /registration/fetch-weight-classes
+  defaults:
+    _controller: 'Metamoris\Controllers\ChallengerController::fetchWeightClassesAction'

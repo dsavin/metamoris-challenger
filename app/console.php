@@ -32,6 +32,21 @@ $console
         $dumper->dumpAssets();
         $output->writeln('<info>Dump finished</info>');
     });
+$console
+    ->register('assetic:dump-one')
+    ->setDescription('Dumps one asset to the filesystem')
+    ->addArgument('name', InputArgument::REQUIRED, 'The name of the asset')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use (
+        $app
+    ) {
+        $name = $input->getArgument('name');
+        $dumper = $app['assetic.dumper'];
+        if (isset($app['twig'])) {
+            $dumper->addTwigAssets();
+        }
+        $dumper->dumpAsset($name, $output);
+        $output->writeln('<info>Dump finished</info>');
+    });
 if (isset($app['cache.path'])) {
     $console
         ->register('cache:clear')

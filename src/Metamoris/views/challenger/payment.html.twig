@@ -12,7 +12,7 @@
 {% block javascripts %}
     {% javascripts
     'js/jquery.validate.js'
-    'js/registration/*' filter="jsmin" %}
+    'js/registration/payment_form.js' filter="jsmin" %}
     <script src="{{ app.conf.assets_url }}{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
@@ -113,9 +113,12 @@
                 </div>
                 <!--/ .row-->
 
-                <form action="/" role="form">
+                <form name="payment-info"
+                      action="{{ path('challenger.registration.payment') }}"
+                      method="post" id="payment-form"
+                      role="form">
 
-                    <div class="form-metamoris">
+                    <div class="form-metamoris" style="min-height: 600px;">
 
                         <div class="row">
 
@@ -134,83 +137,19 @@
 
                                             <div class="dropdown">
                                                 <select name="location"
-                                                        class="dropdown-select">
+                                                        class="dropdown-select"
+                                                        id="location">
                                                     <option value="" disabled
                                                             selected>Select a
                                                         city
                                                     </option>
-                                                    <option value="Atlanta, GA">
-                                                        1 - Atlanta, GA
+                                                    {% for city in cities %}
+                                                        <option value="{{ city.id }}">
+                                                            {{ loop.index }}
+                                                            - {{ city.name }}
+                                                            , {{ city.state }}
                                                     </option>
-                                                    <option value="Boston, MA">2
-                                                        - Boston, MA
-                                                    </option>
-                                                    <option value="Charlotte, NC">
-                                                        3 - Charlotte, NC
-                                                    </option>
-                                                    <option value="Chicago, IL">
-                                                        4 - Chicago, IL
-                                                    </option>
-                                                    <option value="Dallas, TX">5
-                                                        - Dallas, TX
-                                                    </option>
-                                                    <option value="Denver, CO">6
-                                                        - Denver, CO
-                                                    </option>
-                                                    <option value="Houston, TX">
-                                                        7 - Houston, TX
-                                                    </option>
-                                                    <option value="Las Vegas, NV">
-                                                        8 - Las Vegas, NV
-                                                    </option>
-                                                    <option value="Los Angeles, CA">
-                                                        9 - Los Angeles, CA
-                                                    </option>
-                                                    <option value="Miami, FL">10
-                                                        - Miami, FL
-                                                    </option>
-                                                    <option value="Minneapolis, MN">
-                                                        11 - Minneapolis, MN
-                                                    </option>
-                                                    <option value="New York, NY">
-                                                        12 - New York, NY
-                                                    </option>
-                                                    <option value="Atlanta, GA">
-                                                        13 - Atlanta, GA
-                                                    </option>
-                                                    <option value="Boston, MA">
-                                                        14 - Boston, MA
-                                                    </option>
-                                                    <option value="Charlotte, NC">
-                                                        15 - Charlotte, NC
-                                                    </option>
-                                                    <option value="Chicago, IL">
-                                                        16 - Chicago, IL
-                                                    </option>
-                                                    <option value="Dallas, TX">
-                                                        17 - Dallas, TX
-                                                    </option>
-                                                    <option value="Denver, CO">
-                                                        18 - Denver, CO
-                                                    </option>
-                                                    <option value="Houston, TX">
-                                                        19 - Houston, TX
-                                                    </option>
-                                                    <option value="Las Vegas, NV">
-                                                        20 - Las Vegas, NV
-                                                    </option>
-                                                    <option value="Los Angeles, CA">
-                                                        21 - Los Angeles, CA
-                                                    </option>
-                                                    <option value="Miami, FL">22
-                                                        - Miami, FL
-                                                    </option>
-                                                    <option value="Minneapolis, MN">
-                                                        23 - Minneapolis, MN
-                                                    </option>
-                                                    <option value="New York, NY">
-                                                        24 - New York, NY
-                                                    </option>
+                                                    {% endfor %}
 
                                                 </select>
                                             </div>
@@ -225,40 +164,15 @@
                                             <label>Select weight class:</label>
 
                                             <div class="dropdown">
-                                                <select name="weight-class"
-                                                        class="dropdown-select">
+                                                <select name="weight_class"
+                                                        class="dropdown-select"
+                                                        id="weight-class"
+                                                        disabled>
                                                     <option value="" disabled
                                                             selected>Select a
                                                         weight class
                                                     </option>
-                                                    <option value="Lightweight">
-                                                        01 - Lightweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        0-135lbs
-                                                    </option>
-                                                    <option value="Welterweight">
-                                                        02 - Welterweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;136-155lbs
-                                                    </option>
-                                                    <option value="Middleweight">
-                                                        03 - Middleweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;156-175lbs
-                                                    </option>
-                                                    <option value="Light Heavyweight">
-                                                        04 - Light Heavyweight
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;176-195lbs
-                                                    </option>
-                                                    <option value="Heavyweight">
-                                                        05 - Heavyweight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;196-225lbs
-                                                    </option>
-                                                    <option value="Super Heavyweight">
-                                                        06 - Super Heavyweight
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+225lbs
-                                                    </option>
-                                                    <option value="" disabled>
-                                                        ----------------------------------
-                                                    </option>
-                                                    <option value="Super Heavyweight">
-                                                        08 - Female absolute
-                                                        only
-                                                    </option>
+
                                                 </select>
                                             </div>
                                             <!--/ .input-dropdown-->
@@ -286,8 +200,8 @@
                                                  class="col-md-6"><label><input
                                                             class="ccbtn"
                                                             type="radio"
-                                                            name="ccmethod"
-                                                            value="ccmethod"
+                                                            name="method"
+                                                            value="cc"
                                                             checked><img
                                                             width="195"
                                                             height="30"
@@ -297,8 +211,8 @@
                                                  class="col-md-6"><label><input
                                                             class="ccbtn2"
                                                             type="radio"
-                                                            name="ccmethod"
-                                                            value="ccmethod"><img
+                                                            name="method"
+                                                            value="paypal"><img
                                                             width="94"
                                                             height="30"
                                                             src="{{ app.conf.assets_url }}images/paypal@2.png"/></label>
@@ -315,20 +229,22 @@
                                             <label>Card Type</label>
 
                                             <div class="dropdown">
-                                                <select name="card-type"
+                                                <select name="card_type"
                                                         class="dropdown-select">
                                                     <option value="none"
                                                             disabled selected>
                                                         Select a card
                                                     </option>
-                                                    <option value="1">Visa
+                                                    <option value="Visa">Visa
                                                     </option>
-                                                    <option value="2">Master
+                                                    <option value="Master
+                                                        Card">Master
                                                         Card
                                                     </option>
-                                                    <option value="2">AMEX
+                                                    <option value="AMEX">AMEX
                                                     </option>
-                                                    <option value="2">DISCOVER
+                                                    <option value="DISCOVER">
+                                                        DISCOVER
                                                     </option>
                                                 </select>
                                             </div>
@@ -345,10 +261,11 @@
                                     <div class="col-md-12 col-sm-12"
                                          style="position: inherit;">
                                         <fieldset class="input-block">
-                                            <label for="card-holder">Card Holder
+                                            <label for="card_holder">Card Holder
                                                 Name</label>
                                             <input type="text" id="card-holder"
                                                    class=""
+                                                   name="card_holder"
                                                    placeholder="e.g. John Smith"
                                                    required/>
                                             <span class="entypo-user icon"></span>
@@ -357,9 +274,10 @@
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <fieldset class="input-block" style="">
-                                            <label for="card-number">Card
+                                            <label for="card_number">Card
                                                 Number</label>
-                                            <input type="text" id="card-number"
+                                            <input type="text" id="card_number"
+                                                   name="card_number"
                                                    placeholder="Credit Card number"
                                                    maxlength="16" required/>
                                             <span class="entypo-credit-card icon"></span>
@@ -372,7 +290,7 @@
                                             <label>Exp Month</label>
 
                                             <div class="dropdown">
-                                                <select name="month"
+                                                <select name="card_month"
                                                         class="dropdown-select">
                                                     <option value="none"
                                                             disabled selected>
@@ -416,7 +334,7 @@
                                             <label>Exp Year</label>
 
                                             <div class="dropdown">
-                                                <select name="year"
+                                                <select name="card_year"
                                                         class="dropdown-select">
                                                     <option value="none"
                                                             disabled selected>
@@ -451,10 +369,11 @@
                                 <div class="row">
                                     <div class="col-md-4 col-sm-4" style="">
                                         <fieldset class="input-block">
-                                            <label for="card-cid">CID</label>
+                                            <label for="card_cid">CID</label>
                                             <input type="text" id="card-cid"
+                                                   name="card_cid"
                                                    placeholder="e.g. 366"
-                                                   maxlength="3" pattern="[0-9]"
+                                                   maxlength="3"
                                                    required/>
                                             <span class="entypo-credit-card icon"></span>
                                         </fieldset>
@@ -472,12 +391,12 @@
                         </div>
                         <!--/ .row-->
 
-                    </div>
-                    <!--/ .form-metamoris-->
+
+                        <input type="hidden" name="step" value="payment"/>
 
                     <div class="prev">
                         <button class="button button-control" type="button"
-                                onclick="window.location.href='02_form_personal.html'">
+                                onclick="window.location.href='{{ path('challenger.registration') }}'">
                             <span>Prev Step <b>Personal Information</b></span>
                         </button>
                         <div class="button-divider"></div>
@@ -485,13 +404,13 @@
 
 
                     <div class="next">
-                        <button class="button button-control" type="button"
-                                onclick="window.location.href='04_form_confirm.html'">
+                        <button class="button button-control" type="submit">
                             <span>Next Step <b>Confirm Your Details</b></span>
                         </button>
                         <div class="button-divider"></div>
                     </div>
-
+                    </div>
+                    <!--/ .form-metamoris-->
                 </form>
                 <!--/ .form-metamoris-->
 
@@ -502,5 +421,7 @@
         <!--/ .form-container-->
 
     </div>
+
+
     <!--/ #content-->
     {% endblock %}

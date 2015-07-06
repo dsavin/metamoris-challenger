@@ -1,0 +1,207 @@
+{% extends "layout_forms.html.twig" %}
+
+{% block stylesheets %}
+    <!-- Forms stylesheet -->
+    {% stylesheets 'css/form2.css' 'css/grid.css' 'css/fontello.css' 'css/layout.css' filter='cssmin' %}
+    <link href="{{ app.conf.assets_url }}{{ asset_url }}" type="text/css"
+          rel="stylesheet"/>
+    {% endstylesheets %}
+    <!-- / Forms stylesheet -->
+{% endblock %}
+
+
+{% block content %}
+    <div id="content">
+
+        <div class="form-container">
+
+            <div id="metamoris_form" class="container substrate">
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <span class="head_logo_right"><img
+                                    src="{{ app.conf.assets_url }}images/logo.png"/></span>
+                        <span class="head_logo_left"><img
+                                    src="{{ app.conf.assets_url }}images/logo.png"/></span>
+
+                        <h2 class="form-login-heading">METAMORIS:<span>QUALIFIER REGISTRATION</span>
+                        </h2>
+                    </div>
+
+                </div>
+                <!--/ .row-->
+
+                <div class="row stage-container">
+
+                    <div class="stage tmm-success col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-lock"></div>
+
+                        <div class="stage-content">
+                            <h3 class="stage-title">Create Account</h3>
+
+                            <div class="stage-info">
+                                Please login with your email and password
+                                credentials
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                    <div class="stage tmm-success col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-user"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Personal Information</h3>
+
+                            <div class="stage-info">
+                                Name, Phone, Home address and team / affiliation
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                    <div class="stage tmm-success col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-payment"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Payment Information</h3>
+
+                            <div class="stage-info">
+                                Select your location, weight class and payment
+                                method
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                    <div class="stage tmm-current col-md-3 col-sm-3">
+                        <div class="stage-header head-icon head-icon-details"></div>
+                        <div class="stage-content">
+                            <h3 class="stage-title">Confirm Your Details</h3>
+
+                            <div class="stage-info">
+                                Review your information before submitting.
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ .stage-->
+
+                </div>
+                <!--/ .row-->
+
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="form-header">
+                            <div class="form-title form-icon title-icon-payment">
+                                <b>Confirm</b> Details
+                            </div>
+                            <div class="steps" style="">
+                                <img src="{{ app.conf.assets_url }}images/secure_server@2.png"/>
+                            </div>
+                        </div>
+                        <!--/ .form-header-->
+
+                    </div>
+
+                </div>
+                <!--/ .row-->
+
+                <form action="/" role="form">
+
+                    <div class="form-metamoris">
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-sm-7">
+
+                                <div class="data-container">
+                                    <div style="padding-top:20px; border-bottom: 1px solid #a2a2a2;">
+                                        <h2>Your Order</h2></div>
+                                    <span style="font-size:small;"><p>Please
+                                            review the below information and
+                                            verify that it is
+                                            correct.</p></span>
+                                    <br/>
+                                    <dl>
+                                        <dt>Selected Location:</dt>
+                                        <dd>{{ location.name }}
+                                            , {{ location.state }}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Weight Class:</dt>
+                                        <dd>{{ class.name }} {{ class.weight }}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Email ID:</dt>
+                                        <dd>{{ user.email }}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Full Name:</dt>
+                                        <dd>{% if data.first_name is defined %}{{ data.first_name }}{% endif %} {% if data.last_name is defined %}{{ data.last_name }}{% endif %}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Gender:</dt>
+                                        <dd>{% if data.gender is defined %}{{ data.gender }}{% endif %}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Telephone:</dt>
+                                        <dd>{% if data.phone is defined %}{{ data.phone }}{% endif %}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Address:</dt>
+                                        <dd>{% if data.address is defined %}{{ data.address }}{% endif %}{% if data.state is defined %}, {{ data.state }}{% endif %}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Zip Code:</dt>
+                                        <dd>{% if data.zip_code is defined %}{{ data.zip_code }}{% endif %}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Country:</dt>
+                                        <dd>{% if data.country is defined %}{{ data.country }}{% endif %}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Payment method:</dt>
+                                        <dd>{% if data.method == 'cc' %}{{ data.card_type }}{% else %}PayPal{% endif %}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Total:</dt>
+                                        <dd>$125.00</dd>
+                                    </dl>
+                                </div>
+                                <!--/ .data-container-->
+
+                            </div>
+
+                        </div>
+                        <!--/ .row-->
+
+                    </div>
+                    <!--/ .form-metamoris-->
+
+                    <div class="prev">
+                        <button class="button button-control" type="button"
+                                onclick="window.location.href='{{ path('challenger.registration.payment') }}'">
+                            <span>Prev Step <b>Payment Information</b></span>
+                        </button>
+                        <div class="button-divider"></div>
+                    </div>
+
+                    <div class="next">
+                        <button class="button button-control" type="button"
+                                onclick="window.location.href='{{ path('challenger.registration.confirmation') }}'">
+                            <span>Submit<b>Your Information</b></span></button>
+                        <div class="button-divider"></div>
+                    </div>
+
+                </form>
+                <!--/ form-->
+
+            </div>
+            <!--/ .container-->
+
+        </div>
+        <!--/ .form-container-->
+
+    </div><!--/ #content-->
+{% endblock %}
