@@ -192,13 +192,21 @@
                         </div>
                         <!--/ .form-metamoris-->
 
-
+                        {% if error %}
+                            <div class="prev">
+                                <button class="button button-control" type="button"
+                                        onclick="window.location.href='{{ path('challenger.registration.payment') }}'">
+                                    <span>Prev Step <b>Payment Information</b></span>
+                                </button>
+                                <div class="button-divider"></div>
+                            </div>
+                        {% else %}
                         <div class="next">
                             <button class="button button-control" type="button" onclick="window.location.href='http://www.metamoris.com'"><span>Return<b>to metamoris.com</b></span></button>
                             <div class="button-divider"></div>
                         </div>
 
-
+                        {%  endif  %}
                 </form>
                 <!--/ form-->
 

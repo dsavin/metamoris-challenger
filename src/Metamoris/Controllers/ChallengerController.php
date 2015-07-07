@@ -472,4 +472,46 @@ class ChallengerController
 
         return $this->tabFormsAction($request, $app, 'reenter', $token);
     }
+
+    /**
+     * @param Application $app
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     */
+    public function forgotPasswordAction(Application $app, Request $request)
+    {
+
+        if ($request->isMethod('POST')) {
+            $email = $request->request->get('email');
+            $user = $app['user.manager']->findOneBy(array('email' => $email));
+
+            //var_dump($user); exit();
+            if ($user) {
+                // Initialize and send the password reset request.
+                $user->setTimePasswordResetRequested(time());
+                if (!$user->getConfirmationToken()) {
+                    $user->setConfirmationToken($app['user.tokenGenerator']->generateToken());
+                }
+                $app['user.manager']->update($user);
+
+                $app['user.mailer']->sendResetMessage($user);
+                $app['session']->getFlashBag()->set('alert',
+                    'Instructions for resetting your password have been emailed to you.');
+                $app['session']->set('_security.last_username', $email);
+
+                return $app->redirect($app['url_generator']->generate('user.login'));
+            }
+            $app['session']->getFlashBag()->set('alert',
+                'No user account was found with that email address.');
+
+        } else {
+            $email = $request->request->get('email') ?: ($request->query->get('email') ?: $app['session']->get('_security.last_username'));
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $email = '';
+            }
+        }
+        return $this->tabFormsAction($request, $app, 'reset');
+
+    }
 }

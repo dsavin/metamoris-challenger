@@ -21,6 +21,12 @@ challenger.tabs.reset:
     _controller: 'Metamoris\Controllers\ChallengerController::tabFormsAction'
     activeTab: 'reset'
 
+challenger.tabs.forgot-password:
+  path:     /forgot-password
+  defaults:
+    _controller: 'Metamoris\Controllers\ChallengerController::forgotPasswordAction'
+    activeTab: 'reset'
+
 challenger.tabs.reset-password:
   path:     /reset-password/{token}
   defaults:
