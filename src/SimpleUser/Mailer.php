@@ -158,6 +158,24 @@ class Mailer
             $this->getFromEmail(), $user->getEmail());
     }
 
+    public function sendSuccessMessage(User $user, $location, $class)
+    {
+
+        $context = [
+            'user' => $user,
+            'location' => $location,
+            'class' => $class
+        ];
+
+
+        $this->sendMessage(
+            'email/confirmation.twig',
+            $context,
+            $this->getFromEmail(),
+            $user->getEmail()
+        );
+    }
+
     /**
      * @param string $templateName
      * @param array $context

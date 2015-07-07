@@ -1,0 +1,39 @@
+<!-- Reset form -->
+<div class="reset-form">
+    <!-- Title -->
+    <div class="title">Account reset</div>
+    <!-- Intro text -->
+    <p class="intro">Forgot your username or lost your password? <b>No
+            worries,</b> simply enter your username or email and we'll send you
+        new login details.</p>
+    <!-- Form fields -->
+    <form name="reset" id="reset" method="post"
+          action="{{ path('challenger.tabs.reset-password',  {'token': token}) }}">
+        <div class="clrfx mt-10 mb-30 bt"><span class="inner-title">Please provide us</span>
+        </div>
+        <!-- Email input -->
+        <div class="field">
+            <input class="form-control" name="password" type="password"
+                   id="input-password" required placeholder="Password">
+            <span class="entypo-mail icon"></span>
+            <span class="slick-tip left">New
+            password</span>
+        </div>
+        <div class="field">
+            <input class="form-control" name="confirm_password" type="password"
+                   id="input-confirm-password" required placeholder="Re-type Password">
+            <span class="entypo-mail icon"></span>
+            <span class="slick-tip left">Re-type
+            password</span>
+        </div>
+
+        <div class="clrfx mt-10"></div>
+
+        <!-- Send button -->
+        <input type="submit" value="Reset" class="send"
+                />
+    </form>
+    <!-- / Form fields -->
+</div>
+<!-- / Reset form -->
+

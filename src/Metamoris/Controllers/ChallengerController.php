@@ -10,6 +10,15 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Application;
 use Symfony\Component\Validator\Constraints\Email;
+use PayPal\Api\Amount;
+use PayPal\Api\Details;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
+use PayPal\Api\Payer;
+use PayPal\Api\Payment;
+use PayPal\Api\RedirectUrls;
+use PayPal\Api\Transaction;
+
 
 class ChallengerController
 {
@@ -28,7 +37,8 @@ class ChallengerController
     public function tabFormsAction(
         Request $request,
         Application $app,
-        $activeTab
+        $activeTab,
+        $token = null
     )
     {
         $authException = $app['user.last_auth_exception']($request);
@@ -94,7 +104,8 @@ class ChallengerController
             [
                 'error' => $authException ? $authException->getMessageKey() : null,
                 'registerForm' => $this->registerForm->createView(),
-                'activeTab' => $activeTab
+                'activeTab' => $activeTab,
+                'token' => $token
             ]
         );
     }
@@ -182,7 +193,7 @@ class ChallengerController
         ON map.city_id = c.id
         WHERE weight_class_id = 7
         GROUP BY city_id
-        HAVING COUNT(*) > 2 ORDER BY c.name)";
+        HAVING COUNT(*) > 15 ORDER BY c.name)";
 
         } elseif (array_key_exists('gender', $customFields)
             && $customFields['gender'] === 'Male') {
@@ -195,7 +206,7 @@ class ChallengerController
           ON map.city_id = c.id
           WHERE weight_class_id IN (1,3,4,5,6)
           GROUP BY city_id
-          HAVING COUNT(*) > 10
+          HAVING COUNT(*) > 79
           ORDER BY c.name)";
         } else {
             $citiesSql = "
@@ -206,7 +217,7 @@ class ChallengerController
           LEFT JOIN challenger_cities c
           ON map.city_id = c.id
           GROUP BY city_id
-          HAVING COUNT(*) > 12
+          HAVING COUNT(*) > 95
           ORDER BY c.name)";
         }
 
@@ -296,7 +307,7 @@ class ChallengerController
         if (array_key_exists('confirmation_id', $data) === false) {
             if ($data['method'] === 'cc') {
                 $order = new \AuthorizeNetAIM();
-                $order->amount = "1.00";
+                $order->amount = "125.00";
                 $order->card_num = $data['card_number'];
                 $order->exp_date = $data['card_month'] . '/' . $data['card_year'];
 
@@ -324,11 +335,14 @@ class ChallengerController
                             'city_id' => $data['location']
                         ]
                     );
+                    $app['user.mailer']->sendSuccessMessage($app['user'], $location, $class);
 
                 } else {
                     $error = 'There was an issue during charging of your credit card.
                     Please provide another credit card data.';
                 }
+            } elseif  ($data['method'] === 'paypal') {
+
             }
         }
 
@@ -378,15 +392,16 @@ class ChallengerController
             } elseif ($app['user']->hasCustomField('gender')
                 && $app['user']->getCustomField('gender') == 'Male') {
                 $classesSql = "
-                SELECT *
+                                 SELECT *
                 FROM challenger_weight_classes
-                WHERE NOT EXISTS (
+                WHERE id NOT IN (
                  SELECT c.id
           FROM challenger_user_class_city map
           LEFT JOIN challenger_weight_classes c
-          ON map.weight_class_id = c.id AND map.city_id = ?
+          ON map.weight_class_id = c.id
+          WHERE map.city_id = ?
           GROUP BY weight_class_id
-          HAVING COUNT(*) > 2
+          HAVING COUNT(*) > 15
           ORDER BY c.name
                 ) AND id != 7";
                 $classes = $app['db']->fetchAll($classesSql, [(int) $city]);
@@ -398,5 +413,63 @@ class ChallengerController
         }
 
         return new JsonResponse($classes);
+    }
+
+    public function resetPasswordAction(
+        Application $app,
+        Request $request,
+        $token
+    ) {
+
+        $tokenExpired = false;
+
+        /**
+         * @var User $user
+         */
+        $user = $app['user.manager']->findOneBy(array('confirmationToken' => $token));
+        if (!$user) {
+            $tokenExpired = true;
+        } else {
+            if ($user->isPasswordResetRequestExpired($app['user.options']['passwordReset']['tokenTTL'])) {
+                $tokenExpired = true;
+            }
+        }
+
+        if ($tokenExpired) {
+            $app['session']->getFlashBag()->set('alert',
+                'Sorry, your password reset link has expired.');
+
+            return $app->redirect($app['url_generator']->generate('user.login'));
+        }
+
+        $error = '';
+        if ($request->isMethod('POST')) {
+            // Validate the password
+            $password = $request->request->get('password');
+            if ($password != $request->request->get('confirm_password')) {
+                $error = 'Passwords don\'t match.';
+            } else {
+                if ($error = $app['user.manager']->validatePasswordStrength($user,
+                    $password)
+                ) {
+                    ;
+                } else {
+                    // Set the password and log in.
+                    $app['user.manager']->setUserPassword($user, $password);
+                    $user->setConfirmationToken(null);
+                    $user->setEnabled(true);
+                    $app['user.manager']->update($user);
+
+                    $app['user.manager']->loginAsUser($user);
+
+                    $app['session']->getFlashBag()->set('alert',
+                        'Your password has been reset and you are now signed in.');
+
+                    return $app->redirect($app['url_generator']->generate('challenger.registration'));
+                }
+            }
+        }
+
+        return $this->tabFormsAction($request, $app, 'reenter', $token);
     }
 }

@@ -8,7 +8,7 @@
 <label for="login" class="tabs entypo-home"></label>
 <!-- Reset input and label -->
 <input id="reset" type="radio" class="reset-selector" name="slick-forms"
-        {% if activeTab == 'reset' %} checked="checked" {% endif %}/>
+        {% if activeTab == 'reset' or  activeTab == 'reenter' %} checked="checked" {% endif %}/>
 <label for="reset" class="tabs entypo-mail"></label>
 <!-- White divider for hiding the shadow -->
 <div class="clrfx merge"></div>

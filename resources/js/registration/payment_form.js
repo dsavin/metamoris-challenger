@@ -16,7 +16,7 @@ $().ready(function () {
                         new Option(text, wClass.id));
                 }
 
-                $("#weight_class").prop('disabled', false);
+                $("#weight_class").val('').prop('disabled', false);
             });
     });
 

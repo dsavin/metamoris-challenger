@@ -24,7 +24,12 @@
         <div class="forms">
             {{ include('partials/tab_forms/register_form.html.twig') }}
             {{ include('partials/tab_forms/login_form.html.twig') }}
+
+            {%  if activeTab == 'reenter' %}
+            {{ include('partials/tab_forms/reenter_form.html.twig') }}
+            {%  else %}
             {{ include('partials/tab_forms/reset_form.html.twig') }}
+            {%  endif %}
         </div>
         <!-- / Forms wrapper -->
         {{ include('partials/tac.html.twig') }}
